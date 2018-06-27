@@ -1,4 +1,3 @@
 ﻿  engine.cpp
-     Creating library C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.lib and object C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.exp
-sdl2main.lib(SDL_windows_main.obj) : error LNK2019: unresolved external symbol SDL_main referenced in function main_utf8
-C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.exe : fatal error LNK1120: 1 unresolved externals
+  Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.dll
+  Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.pdb (Partial PDB)
