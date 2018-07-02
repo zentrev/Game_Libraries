@@ -20,7 +20,7 @@ public:
 	void Update();
 	void Shutdown();
 
-	SDL_Renderer* GetRenderer() { return m_renderer; }
+	SDL_Window* GetWindow() { return m_window; }
 
 	bool IsQuit() { return m_isQuit; }
 
@@ -29,6 +29,5 @@ public:
 protected:
 	bool m_isQuit = false;
 	SDL_Window * m_window = nullptr;
-	SDL_Renderer * m_renderer = nullptr;
 	
 };
