@@ -57,6 +57,9 @@
     <ClInclude Include="color.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -91,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="color.cpp">
       <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

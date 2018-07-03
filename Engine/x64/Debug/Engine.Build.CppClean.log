@@ -1,10 +1,17 @@
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\vc141.pdb
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\vc141.idb
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\audiosystem.obj
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\color.obj
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.obj
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\inputmanager.obj
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\math.obj
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\matrix22.obj
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\matrix33.obj
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\renderer.obj
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\texturemanager.obj
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\timer.obj
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\vector2d.obj
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\vector3d.obj
 c:\users\c.t.raines.iii\source\repos\ncgame\x64\debug\engine.lib
 c:\users\c.t.raines.iii\source\repos\ncgame\x64\debug\engine.exp
 c:\users\c.t.raines.iii\source\repos\ncgame\x64\debug\engine.ilk

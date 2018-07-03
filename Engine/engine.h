@@ -1,6 +1,4 @@
 #pragma once
-#include <iostream>
-#include "SDL.h"
 
 #ifdef ENGINE_EXPORTS  
 #define ENGINE_API __declspec(dllexport)   
@@ -8,7 +6,8 @@
 #define ENGINE_API __declspec(dllimport)   
 #endif 
 
-class TextureManager;
+#include "SDL.h"
+
 
 class ENGINE_API Engine
 {
@@ -24,7 +23,6 @@ public:
 
 	bool IsQuit() { return m_isQuit; }
 
-	void Display() { std::cout << "Hello World!"; }
 
 protected:
 	bool m_isQuit = false;
