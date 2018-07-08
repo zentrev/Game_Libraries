@@ -91,11 +91,15 @@ void Engine::Update()
 	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_W) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_W) == InputManager::eState::HELD)) force.y = -200.0f * Timer::Instance()->DeltaTime();
 	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_S) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_S) == InputManager::eState::HELD)) force.y = 200.0f * Timer::Instance()->DeltaTime();
 
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_RIGHT) == InputManager::eState::HELD) std::cout << "Right Butotn Held\n";
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT) == InputManager::eState::HELD) std::cout << "Left Butotn Held\n";
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_MIDDLE) == InputManager::eState::HELD) std::cout << "Middle Butotn Held\n";
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X1) == InputManager::eState::HELD) std::cout << "X1 Butotn Held\n";
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X2) == InputManager::eState::HELD) std::cout << "X2 Butotn Held\n";
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT) == InputManager::eState::PRESSED) std::cout << "Left Pressed\n";
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT) == InputManager::eState::HELD) std::cout << "Left Held\n";
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT) == InputManager::eState::RELEASED) std::cout << "Left Reseased\n";
+	//if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT) == InputManager::eState::IDLE) std::cout << "Left Idle\n";
+
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_RIGHT) == InputManager::eState::HELD) std::cout << "Right Held\n";
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_MIDDLE) == InputManager::eState::HELD) std::cout << "Middle Held\n";
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X1) == InputManager::eState::HELD) std::cout << "X1 Held\n";
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X2) == InputManager::eState::HELD) std::cout << "X2 Held\n";
 
 
 	Matrix22 mx;
