@@ -1,6 +1,4 @@
 #pragma once
-#include <iostream>
-#include "SDL.h"
 
 #ifdef ENGINE_EXPORTS  
 #define ENGINE_API __declspec(dllexport)   
@@ -8,7 +6,9 @@
 #define ENGINE_API __declspec(dllimport)   
 #endif 
 
-class TextureManager;
+#include "SDL.h"
+#include "SDL_ttf.h"
+
 
 class ENGINE_API Engine
 {
@@ -20,15 +20,13 @@ public:
 	void Update();
 	void Shutdown();
 
-	SDL_Renderer* GetRenderer() { return m_renderer; }
+	SDL_Window* GetWindow() { return m_window; }
 
 	bool IsQuit() { return m_isQuit; }
 
-	void Display() { std::cout << "Hello World!"; }
 
 protected:
 	bool m_isQuit = false;
 	SDL_Window * m_window = nullptr;
-	SDL_Renderer * m_renderer = nullptr;
-	TextureManager* m_textureManager = nullptr;
+	
 };
