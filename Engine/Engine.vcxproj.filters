@@ -60,6 +60,9 @@
     <ClInclude Include="timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -96,6 +99,9 @@
       <Filter>Graphics</Filter>
     </ClCompile>
     <ClCompile Include="timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

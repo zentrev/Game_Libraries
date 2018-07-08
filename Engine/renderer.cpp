@@ -5,6 +5,7 @@ bool Renderer::Initialize(Engine * engine)
 {
 	m_engine = engine;
 	m_renderer = SDL_CreateRenderer(engine->GetWindow(), -1, 0);
+
 	return true;
 }
 

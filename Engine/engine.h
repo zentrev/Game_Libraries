@@ -7,6 +7,7 @@
 #endif 
 
 #include "SDL.h"
+#include "SDL_ttf.h"
 
 
 class ENGINE_API Engine
