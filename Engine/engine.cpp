@@ -13,6 +13,8 @@
 Vector2D position(10.0f, 10.0f);
 float angle = 0.0f;
 Text* text;
+float x;
+float y;
 
 bool Engine::Initialize()
 {
@@ -93,7 +95,9 @@ void Engine::Update()
 
 	std::vector<Color> colors = { Color::red, Color::green, Color::white };
 	//text->SetColor(colors[rand() % colors.size()]);
-	text->Draw(Vector2D(10.0f, 10.0f), 0.0f);
+	x += .013;
+	y += .01;
+	text->Draw(Vector2D(x, y), 0.0f);
 
 	Renderer::Instance()->DrawTexture(texture, position, angle);
 

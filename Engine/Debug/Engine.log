@@ -1,3 +1,18 @@
-﻿  engine.cpp
+﻿  vector3D.cpp
+  vector2D.cpp
+  timer.cpp
+  textureManager.cpp
+  textManager.cpp
+  text.cpp
+  renderer.cpp
+  matrix33.cpp
+  matrix22.cpp
+  math.cpp
+  inputManager.cpp
+  engine.cpp
+  color.cpp
+  audioSystem.cpp
+  Generating Code...
+     Creating library C:\Users\C.T.Raines.III\source\repos\NCGame\Debug\Engine.lib and object C:\Users\C.T.Raines.III\source\repos\NCGame\Debug\Engine.exp
   Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\Debug\Engine.dll
   Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\Debug\Engine.pdb (Partial PDB)
