@@ -16,8 +16,8 @@ public:
 	friend Singleton<TextManager>;
 
 protected:
-	TextManager();
-	~TextManager();
+	TextManager() {};
+	~TextManager() {};
 private:
 	Engine * m_engine;
 	std::vector<Text*> m_texts;

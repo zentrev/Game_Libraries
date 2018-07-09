@@ -61,5 +61,4 @@ void Text::Create()
 	SDL_Surface * surface = TTF_RenderText_Solid(m_font, m_text.c_str(), SDL_Color(m_color));
 	m_texture = SDL_CreateTextureFromSurface(Renderer::Instance()->GetRenderer(), surface);
 	SDL_FreeSurface(surface);
-
 }

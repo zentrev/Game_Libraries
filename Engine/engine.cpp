@@ -25,7 +25,7 @@ bool Engine::Initialize()
 	TextureManager::Instance()->Initialize(this);
 	AudioSystem::Instance()->Initialize(this);
 	TextManager::Instance()->Initialize(this);
-	text = TextManager::Instance()->CreateText("Hello!", "..\\content\\Inconsolata-Bold.ttf", 24, Color::red);
+	text = TextManager::Instance()->CreateText("Hello!", "..\\content\\Inconsolata-Bold.ttf", 24, Color::white);
 
 	return true;
 }
@@ -67,21 +67,19 @@ void Engine::Update()
 	InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT);
 
 
-	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_A) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_A) == InputManager::eState::HELD)) angle -= 90.0f * Timer::Instance()->DeltaTime();
-	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_D) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_D) == InputManager::eState::HELD)) angle += 90.0f * Timer::Instance()->DeltaTime();
+	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_A) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_A) == InputManager::eState::HELD)) angle -= 180.0f * Timer::Instance()->DeltaTime();
+	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_D) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_D) == InputManager::eState::HELD)) angle += 180.0f * Timer::Instance()->DeltaTime();
 
 	Vector2D force = Vector2D::zero;
-	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_W) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_W) == InputManager::eState::HELD)) force.y = -200.0f * Timer::Instance()->DeltaTime();
-	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_S) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_S) == InputManager::eState::HELD)) force.y = 200.0f * Timer::Instance()->DeltaTime();
+	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_W) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_W) == InputManager::eState::HELD)) force.y = -300.0f * Timer::Instance()->DeltaTime();
+	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_S) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_S) == InputManager::eState::HELD)) force.y = 300.0f * Timer::Instance()->DeltaTime();
 
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT) == InputManager::eState::PRESSED) std::cout << "Left Pressed\n";
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT) == InputManager::eState::HELD) std::cout << "Left Held\n";
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT) == InputManager::eState::RELEASED) std::cout << "Left Reseased\n";
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT) == InputManager::eState::PRESSED) text->SetColor(Color::orange);
 
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_RIGHT) == InputManager::eState::HELD) std::cout << "Right Held\n";
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_MIDDLE) == InputManager::eState::HELD) std::cout << "Middle Held\n";
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X1) == InputManager::eState::HELD) std::cout << "X1 Held\n";
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X2) == InputManager::eState::HELD) std::cout << "X2 Held\n";
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_RIGHT) == InputManager::eState::HELD) text->SetColor(Color::red);
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_MIDDLE) == InputManager::eState::HELD) text->SetColor(Color::blue);
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X1) == InputManager::eState::RELEASED) text->SetColor(Color::green);
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X2) == InputManager::eState::RELEASED) text->SetColor(Color::yellow);
 
 	Matrix22 mx;
 	mx.Rotate(angle * Math::DegreesToRadians);
@@ -94,11 +92,10 @@ void Engine::Update()
 	SDL_Texture* texture = TextureManager::Instance()->GetTexture("..\\content\\car.bmp");
 
 	std::vector<Color> colors = { Color::red, Color::green, Color::white };
-	text->SetColor(colors[rand() % colors.size()]);
+	//text->SetColor(colors[rand() % colors.size()]);
 	text->Draw(Vector2D(10.0f, 10.0f), 0.0f);
 
 	Renderer::Instance()->DrawTexture(texture, position, angle);
 
 	Renderer::Instance()->EndFrame();
-
 }

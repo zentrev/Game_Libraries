@@ -10,7 +10,6 @@ public:
 	Text(const std::string& text, const std::string& fontName, int size, const Color& color);
 	~Text();
 	
-
 	void Draw(const Vector2D& position, float angle);
 
 	void SetText(const std::string& text);

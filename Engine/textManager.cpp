@@ -35,12 +35,3 @@ void TextManager::DestroyText(Text * text)
 		m_texts.erase(it);
 	}
 }
-
-TextManager::TextManager()
-{
-}
-
-
-TextManager::~TextManager()
-{
-}

@@ -21,9 +21,9 @@ public:
 	{
 		SDL_Color color;
 		color.r = ConvertU8(0);
-		color.b = ConvertU8(1);
-		color.g = ConvertU8(2);
-		color.a = 255; // the color class doesn’t handle alpha so set default 255
+		color.g = ConvertU8(1);
+		color.b = ConvertU8(2);
+		color.a = 255;
 
 		return color;
 	}
@@ -60,6 +60,5 @@ public:
 	static const Color magenta;
 	static const Color cyan;
 	static const Color black;
-
 };
 
