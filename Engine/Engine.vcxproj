@@ -141,6 +141,7 @@
     <ClInclude Include="renderer.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="text.h" />
+    <ClInclude Include="textManager.h" />
     <ClInclude Include="textureManager.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="vector2D.h" />
@@ -156,6 +157,7 @@
     <ClCompile Include="matrix33.cpp" />
     <ClCompile Include="renderer.cpp" />
     <ClCompile Include="text.cpp" />
+    <ClCompile Include="textManager.cpp" />
     <ClCompile Include="textureManager.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="vector2D.cpp" />

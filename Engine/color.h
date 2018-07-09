@@ -17,6 +17,19 @@ public:
 	const float& operator [] (size_t index) const { assert(index <= 2); return ((&r)[index]); }
 
 	char ConvertU8(size_t index) const { assert(index <= 2); return static_cast<char>(Math::Clamp01((&r)[index]) * 255.0f); }
+	operator SDL_Color() const
+	{
+		SDL_Color color;
+		color.r = ConvertU8(0);
+		color.b = ConvertU8(1);
+		color.g = ConvertU8(2);
+		color.a = 255; // the color class doesn’t handle alpha so set default 255
+
+		return color;
+	}
+
+	bool operator == (const Color & color) const { return Math::IsZero(r - color.r) && Math::IsZero(g - color.g) && Math::IsZero(b - color.b); }
+	bool operator != (const Color & color) const { return !(*this == color); }
 
 	Color& operator += (const Color & color) { r += color.r; g += color.g; b += color.b; return *this; }
 	Color& operator -= (const Color & color) { r -= color.r; g -= color.g; b += color.b; return *this; }
@@ -48,7 +61,5 @@ public:
 	static const Color cyan;
 	static const Color black;
 
-	//friend std::ostream & operator << (std::ostream & stream, const Color & color) { stream << "{" << color.r << ", " << color.g << ", " << color.b << "}"; return stream; }
-	//friend std::istream & operator >> (std::istream & stream, Color & color);
 };
 

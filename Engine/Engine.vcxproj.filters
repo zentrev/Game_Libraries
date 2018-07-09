@@ -19,6 +19,9 @@
     <Filter Include="Graphics">
       <UniqueIdentifier>{4d8e8a6a-a867-490b-9faa-000b9904c00f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphics\Text">
+      <UniqueIdentifier>{de3bd7de-d293-4ca6-9e38-5847a33fbf37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -61,7 +64,10 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="text.h">
-      <Filter>Header Files</Filter>
+      <Filter>Graphics\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="textManager.h">
+      <Filter>Graphics\Text</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -102,7 +108,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="text.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Graphics\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="textManager.cpp">
+      <Filter>Graphics\Text</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
