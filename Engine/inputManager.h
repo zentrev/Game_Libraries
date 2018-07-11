@@ -16,7 +16,7 @@ public:
 		RELEASED
 	};
 
-	enum eDivice
+	enum eDevice
 	{
 		KEYBOARD,
 		MOUSE,
@@ -31,8 +31,8 @@ public:
 
 	struct InputInfo
 	{
-		eDivice device;
 		int id;
+		eDevice device;
 		int index;
 	};
 
@@ -50,10 +50,23 @@ public:
 	void Shutdown();
 	void Update();
 
-	eButtonState GetButtonState(SDL_Scancode scancode);
-	eButtonState GetMouseButtonState(int button);
+	void AddAction(const std::string& action, int id, eDevice device, int index = 0);
+	eButtonState GetActionButton(const std::string& action);
+	float GetActionAbsolute(const std::string& action);
+	float GetActionRelative(const std::string& action);
+
+
+	float GetAxisAbsolute(int id, eDevice device = eDevice::MOUSE, int index = 0);
+	float GetAxisRelative(int id, eDevice device = eDevice::MOUSE, int index = 0);
+
+	eButtonState GetButtonstate(int id, eDevice device = eDevice::KEYBOARD, int index = 0);
 
 	friend Singleton<InputManager>;
+
+protected:
+	bool GetButtonDown(int id, eDevice device, int index = 0);
+	bool GetPreviousButtonDown(int id, eDevice device, int index = 0);
+
 
 protected:
 	InputManager() {}
