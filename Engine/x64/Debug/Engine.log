@@ -1,5 +1,3 @@
-﻿  engine.cpp
-c:\users\c.t.raines.iii\source\repos\ncgame\engine\engine.cpp(98): warning C4305: '+=': truncation from 'double' to 'float'
-c:\users\c.t.raines.iii\source\repos\ncgame\engine\engine.cpp(99): warning C4305: '+=': truncation from 'double' to 'float'
+﻿  inputManager.cpp
   Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.dll
   Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.pdb (Partial PDB)

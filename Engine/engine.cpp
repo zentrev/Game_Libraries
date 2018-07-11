@@ -69,19 +69,19 @@ void Engine::Update()
 	InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT);
 
 
-	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_A) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_A) == InputManager::eState::HELD)) angle -= 180.0f * Timer::Instance()->DeltaTime();
-	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_D) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_D) == InputManager::eState::HELD)) angle += 180.0f * Timer::Instance()->DeltaTime();
+	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_A) == InputManager::eButtonState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_A) == InputManager::eButtonState::HELD)) angle -= 180.0f * Timer::Instance()->DeltaTime();
+	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_D) == InputManager::eButtonState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_D) == InputManager::eButtonState::HELD)) angle += 180.0f * Timer::Instance()->DeltaTime();
 
 	Vector2D force = Vector2D::zero;
-	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_W) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_W) == InputManager::eState::HELD)) force.y = -300.0f * Timer::Instance()->DeltaTime();
-	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_S) == InputManager::eState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_S) == InputManager::eState::HELD)) force.y = 300.0f * Timer::Instance()->DeltaTime();
+	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_W) == InputManager::eButtonState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_W) == InputManager::eButtonState::HELD)) force.y = -300.0f * Timer::Instance()->DeltaTime();
+	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_S) == InputManager::eButtonState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_S) == InputManager::eButtonState::HELD)) force.y = 300.0f * Timer::Instance()->DeltaTime();
 
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT) == InputManager::eState::PRESSED) text->SetColor(Color::orange);
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_LEFT) == InputManager::eButtonState::PRESSED) text->SetColor(Color::orange);
 
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_RIGHT) == InputManager::eState::HELD) text->SetColor(Color::red);
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_MIDDLE) == InputManager::eState::HELD) text->SetColor(Color::blue);
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X1) == InputManager::eState::RELEASED) text->SetColor(Color::green);
-	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X2) == InputManager::eState::RELEASED) text->SetColor(Color::yellow);
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_RIGHT) == InputManager::eButtonState::HELD) text->SetColor(Color::red);
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_MIDDLE) == InputManager::eButtonState::HELD) text->SetColor(Color::blue);
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X1) == InputManager::eButtonState::RELEASED) text->SetColor(Color::green);
+	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X2) == InputManager::eButtonState::RELEASED) text->SetColor(Color::yellow);
 
 	Matrix22 mx;
 	mx.Rotate(angle * Math::DegreesToRadians);
