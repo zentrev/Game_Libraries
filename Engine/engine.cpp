@@ -28,14 +28,20 @@ bool Engine::Initialize()
 	TextureManager::Instance()->Initialize(this);
 	AudioSystem::Instance()->Initialize(this);
 	TextManager::Instance()->Initialize(this);
+	AudioSystem::Instance()->Initialize(this);
+
 	text = TextManager::Instance()->CreateText("Hello!", "..\\content\\Inconsolata-Bold.ttf", 24, Color::white);
 
 	InputManager::Instance()->AddAction("fire", SDL_BUTTON_LEFT, InputManager::eDevice::MOUSE);
-	InputManager::Instance()->AddAction("left", SDL_SCANCODE_A, InputManager::eDevice::KEYBOARD);
+	InputManager::Instance()->AddAction("left", SDL_SCANCODE_LEFT, InputManager::eDevice::KEYBOARD);
 	InputManager::Instance()->AddAction("right", SDL_SCANCODE_RIGHT, InputManager::eDevice::KEYBOARD);
 	InputManager::Instance()->AddAction("up", SDL_SCANCODE_UP, InputManager::eDevice::KEYBOARD);
 	InputManager::Instance()->AddAction("down", SDL_SCANCODE_DOWN, InputManager::eDevice::KEYBOARD);
 	InputManager::Instance()->AddAction("steer", InputManager::eAxis::X, InputManager::eDevice::MOUSE);
+
+	InputManager::Instance()->AddAction("extreamFunk", SDL_SCANCODE_SPACE, InputManager::eDevice::KEYBOARD);
+	AudioSystem::Instance()->AddSound("extreamFunk", "..\\content\\Sound Data Hell\\Sonic Rush\\Extreme Funk Synth 2.wav");
+
 
 	return true;
 }
@@ -81,9 +87,9 @@ void Engine::Update()
 	std::string str = std::to_string(steer);
 	text = TextManager::Instance()->CreateText(str, "..\\content\\Inconsolata-Bold.ttf", 24, Color::white);
 
-	/*if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_A) == InputManager::eButtonState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_A) == InputManager::eButtonState::HELD)) angle -= 180.0f * Timer::Instance()->DeltaTime();
-	if ((InputManager::Instance()->GetButtonState(SDL_SCANCODE_D) == InputManager::eButtonState::PRESSED) || (InputManager::Instance()->GetButtonState(SDL_SCANCODE_D) == InputManager::eButtonState::HELD)) angle += 180.0f * Timer::Instance()->DeltaTime();
-*/
+	if ((InputManager::Instance()->GetActionButton("left") == InputManager::eButtonState::HELD)) angle -= 180.0f * Timer::Instance()->DeltaTime();
+	if ((InputManager::Instance()->GetActionButton("right") == InputManager::eButtonState::HELD)) angle += 180.0f * Timer::Instance()->DeltaTime();
+
 	Vector2D force = Vector2D::zero;
 	if ((InputManager::Instance()->GetActionButton("up") == InputManager::eButtonState::HELD)) force.y = -300.0f * Timer::Instance()->DeltaTime();
 	if ((InputManager::Instance()->GetActionButton("down") == InputManager::eButtonState::HELD)) force.y = 300.0f * Timer::Instance()->DeltaTime();
@@ -95,10 +101,13 @@ void Engine::Update()
 	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X1) == InputManager::eButtonState::RELEASED) text->SetColor(Color::green);
 	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X2) == InputManager::eButtonState::RELEASED) text->SetColor(Color::yellow);*/
 
-
+	if (InputManager::Instance()->GetActionButton("extreamFunk") == InputManager::eButtonState::HELD)
+	{
+		AudioSystem::Instance()->PlaySound("extreamFunk");
+	}
 
 	Matrix22 mx;
-	angle -= (steer * 200.0f) * Timer::Instance()->DeltaTime();
+	//angle -= (steer * 200.0f) * Timer::Instance()->DeltaTime();
 	mx.Rotate(angle * Math::DegreesToRadians);
 	force = force * mx;
 	position = position + force;
