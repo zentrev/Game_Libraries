@@ -101,7 +101,7 @@ void Engine::Update()
 	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X1) == InputManager::eButtonState::RELEASED) text->SetColor(Color::green);
 	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X2) == InputManager::eButtonState::RELEASED) text->SetColor(Color::yellow);*/
 
-	if (InputManager::Instance()->GetActionButton("extreamFunk") == InputManager::eButtonState::IDLE)
+	if (InputManager::Instance()->GetActionButton("extreamFunk") == InputManager::eButtonState::HELD)
 	{
 		AudioSystem::Instance()->PlaySound("extreamFunk");
 	}

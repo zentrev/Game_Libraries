@@ -1,3 +1,1 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets(76,5): warning : Access to the path 'c:\users\c.t.raines.iii\source\repos\ncgame\x64\debug\game.exe' is denied.
-  main.cpp
-LINK : fatal error LNK1104: cannot open file 'C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.lib'
+﻿LINK : fatal error LNK1104: cannot open file 'C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.lib'
