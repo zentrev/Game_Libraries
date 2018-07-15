@@ -1,3 +1,18 @@
-﻿  engine.cpp
-  Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.dll
-  Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.pdb (Partial PDB)
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets(76,5): warning : Access to the path 'c:\users\c.t.raines.iii\source\repos\ncgame\x64\debug\engine.dll' is denied.
+  vector3D.cpp
+  vector2D.cpp
+  timer.cpp
+  textureManager.cpp
+  textManager.cpp
+  text.cpp
+  renderer.cpp
+  matrix33.cpp
+  matrix22.cpp
+  math.cpp
+  inputManager.cpp
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\inputmanager.cpp(66): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  engine.cpp
+  color.cpp
+  audioSystem.cpp
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.dll'
