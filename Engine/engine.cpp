@@ -51,6 +51,7 @@ void Engine::Shutdown()
 	TextureManager::Instance()->Shutdown();
 	Renderer::Instance()->Shutdown();
 	TextManager::Instance()->Shutdown();
+	AudioSystem::Instance() -> Shutdown();
 	SDL_DestroyWindow(m_window);
 	TTF_Quit();
 	SDL_Quit();
@@ -101,10 +102,10 @@ void Engine::Update()
 	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X1) == InputManager::eButtonState::RELEASED) text->SetColor(Color::green);
 	if (InputManager::Instance()->GetMouseButtonState(SDL_BUTTON_X2) == InputManager::eButtonState::RELEASED) text->SetColor(Color::yellow);*/
 
-	if (InputManager::Instance()->GetActionButton("extreamFunk") == InputManager::eButtonState::HELD)
+	/*if (InputManager::Instance()->GetActionButton("extreamFunk") == InputManager::eButtonState::HELD)
 	{
 		AudioSystem::Instance()->PlaySound("extreamFunk");
-	}
+	}*/
 
 	Matrix22 mx;
 	//angle -= (steer * 200.0f) * Timer::Instance()->DeltaTime();
