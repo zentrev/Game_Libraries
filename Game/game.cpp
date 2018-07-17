@@ -63,7 +63,7 @@ void Game::Update()
 	if ((InputManager::Instance()->GetActionButton("up") == InputManager::eButtonState::HELD)) force.y = -300.0f * Timer::Instance()->DeltaTime();
 	if ((InputManager::Instance()->GetActionButton("down") == InputManager::eButtonState::HELD)) force.y = 300.0f * Timer::Instance()->DeltaTime();
 
-	if (InputManager::Instance()->GetActionButton("extreamFunk") == InputManager::eButtonState::RELEASED)
+	if (InputManager::Instance()->GetActionButton("extreamFunk") == InputManager::eButtonState::PRESSED)
 	{
 		AudioSystem::Instance()->PlaySound("extreamFunk");
 	}

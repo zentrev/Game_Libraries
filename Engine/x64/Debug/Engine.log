@@ -1,3 +1,23 @@
-﻿  engine.cpp
+﻿  vector3D.cpp
+  vector2D.cpp
+  timer.cpp
+  textureManager.cpp
+  textManager.cpp
+  text.cpp
+  renderer.cpp
+  matrix33.cpp
+  matrix22.cpp
+  _math.cpp
+  object.cpp
+  inputManager.cpp
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\inputmanager.cpp(66): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  id.cpp
+  entity.cpp
+  engine.cpp
+  component.cpp
+  color.cpp
+  audioSystem.cpp
+  Generating Code...
+     Creating library C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.lib and object C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.exp
   Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.dll
   Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.pdb (Partial PDB)

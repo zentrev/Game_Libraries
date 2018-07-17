@@ -31,6 +31,12 @@
     <Filter Include="Logic\Input">
       <UniqueIdentifier>{8e7b74ff-99a4-4de0-8250-9a1a41d96472}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{64c0a3d4-8439-4816-b393-fd37ef5d92ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Componets">
+      <UniqueIdentifier>{06f753c0-fbbb-493c-a280-231ab068a599}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="renderer.h">
@@ -78,6 +84,18 @@
     <ClInclude Include="_math.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="id.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>Objects\Componets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="textureManager.cpp">
@@ -121,6 +139,18 @@
     </ClCompile>
     <ClCompile Include="_math.cpp">
       <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="id.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="object.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="component.cpp">
+      <Filter>Objects\Componets</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
