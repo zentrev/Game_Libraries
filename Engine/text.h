@@ -4,7 +4,7 @@
 #include "renderer.h"
 #include <iostream>
 
-class Text
+class ENGINE_API Text
 {
 public:
 	Text(const std::string& text, const std::string& fontName, int size, const Color& color);

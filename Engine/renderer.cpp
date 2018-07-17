@@ -39,5 +39,13 @@ void Renderer::DrawTexture(SDL_Texture * texture, const Vector2D & position, flo
 
 void Renderer::DrawTexture(SDL_Texture * texture, const Vector2D & position, const Vector2D & scale, float angle)
 {
-	//To-Do
+	SDL_Point point = position;
+	SDL_Rect dest = { point.x, point.y, 0, 0 };
+	SDL_QueryTexture(texture, nullptr, nullptr, &dest.w, &dest.h);
+	Vector2D size(dest.w, dest.h);
+	size = size * scale;
+	dest.w = static_cast<int>(size.x);
+	dest.h = static_cast<int>(size.x);
+
+	SDL_RenderCopyEx(m_renderer, texture, nullptr, &dest, angle, nullptr, SDL_FLIP_NONE);
 }

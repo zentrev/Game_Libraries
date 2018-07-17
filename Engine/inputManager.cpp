@@ -63,7 +63,7 @@ void InputManager::Update()
 		for (int i = 0; i < SDL_CONTROLLER_AXIS_MAX; i++)
 		{
 			Sint16 value = SDL_GameControllerGetAxis(controllerInfo.controller, (SDL_GameControllerAxis) i );
-			controllerInfo.axis[i] = value / SDL_MAX_SINT16;
+			controllerInfo.axis[i] = static_cast<int>(value / SDL_MAX_SINT16);
 		}
 	}
 }

@@ -1,5 +1,7 @@
 ﻿  vector3D.cpp
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\vector3d.cpp : fatal error C1041: cannot open program database 'C:\Users\C.T.Raines.III\source\repos\NCGame\Engine\Debug\vc141.idb'; if multiple CL.EXE write to the same .PDB file, please use /FS
   vector2D.cpp
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\vector2d.cpp : fatal error C1041: cannot open program database 'C:\Users\C.T.Raines.III\source\repos\NCGame\Engine\Debug\vc141.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
   timer.cpp
   textureManager.cpp
   textManager.cpp
@@ -9,10 +11,12 @@
   matrix22.cpp
   math.cpp
   inputManager.cpp
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\inputmanager.cpp(66): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\inputmanager.cpp(130): warning C4018: '<': signed/unsigned mismatch
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\inputmanager.cpp(153): warning C4018: '<': signed/unsigned mismatch
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\inputmanager.cpp(195): warning C4018: '<': signed/unsigned mismatch
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\inputmanager.cpp(220): warning C4018: '<': signed/unsigned mismatch
   engine.cpp
   color.cpp
   audioSystem.cpp
   Generating Code...
-     Creating library C:\Users\C.T.Raines.III\source\repos\NCGame\Debug\Engine.lib and object C:\Users\C.T.Raines.III\source\repos\NCGame\Debug\Engine.exp
-  Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\Debug\Engine.dll
-  Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\Debug\Engine.pdb (Partial PDB)

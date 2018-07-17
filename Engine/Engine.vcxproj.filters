@@ -39,9 +39,6 @@
     <ClInclude Include="textureManager.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="math.h">
-      <Filter>Math</Filter>
-    </ClInclude>
     <ClInclude Include="matrix22.h">
       <Filter>Math</Filter>
     </ClInclude>
@@ -78,6 +75,9 @@
     <ClInclude Include="inputManager.h">
       <Filter>Logic\Input</Filter>
     </ClInclude>
+    <ClInclude Include="_math.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="textureManager.cpp">
@@ -85,9 +85,6 @@
     </ClCompile>
     <ClCompile Include="renderer.cpp">
       <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="math.cpp">
-      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="matrix22.cpp">
       <Filter>Math</Filter>
@@ -121,6 +118,9 @@
     </ClCompile>
     <ClCompile Include="inputManager.cpp">
       <Filter>Logic\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="_math.cpp">
+      <Filter>Math</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

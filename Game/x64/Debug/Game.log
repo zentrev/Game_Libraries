@@ -1,1 +1,3 @@
-﻿LINK : fatal error LNK1104: cannot open file 'C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.lib'
+﻿  game.cpp
+  Game.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Game.exe
+  Game.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Game.pdb (Partial PDB)

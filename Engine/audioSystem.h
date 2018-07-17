@@ -5,7 +5,7 @@
 #include <string>
 #include <map>
 
-class AudioSystem : public Singleton<AudioSystem>
+class ENGINE_API AudioSystem : public Singleton<AudioSystem>
 {
 public:
 	bool Initialize(Engine* engine);
