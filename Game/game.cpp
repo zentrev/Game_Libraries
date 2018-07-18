@@ -14,7 +14,12 @@
 #include "matrix33.h"
 #include "vector2D.h"
 #include "vector3D.h"
+#include "entity.h"
+#include "transformComponent.h"
+#include "spriteComponent.h"
 
+
+Entity* entity = nullptr;
 
 bool Game::Initalize()
 {
@@ -34,7 +39,20 @@ bool Game::Initalize()
 	AudioSystem::Instance()->AddSound("extreamFunk", "..\\content\\Sound Data Hell\\Sonic Rush\\Extreme Funk Synth 2.wav");
 
 
+
 	//text = TextManager::Instance()->CreateText("Hello!", "..\\content\\Inconsolata-Bold.ttf", 24, Color::white);
+
+
+	//test
+
+	entity = new Entity(ID("player"));
+	TransformComponent* transformComponent = new TransformComponent(entity);
+	transformComponent->Create(Vector2D(30.0f, 30.0f));
+	entity->AddComponent(transformComponent);
+
+	SpriteComponent* spriteComponent = new SpriteComponent(entity);
+	spriteComponent->Create("..\\content\\car.bmp");
+	entity->AddComponent(spriteComponent);
 
 	m_running = success;
 	return success;
@@ -50,6 +68,8 @@ void Game::Update()
 	m_running = !m_engine->IsQuit();
 	m_engine->Update();
 
+	entity->Update();
+
 	if (InputManager::Instance()->GetActionButton("fire") == InputManager::eButtonState::HELD) std::cout << "RawrXD";
 
 	const Uint8* keystate = SDL_GetKeyboardState(nullptr);
@@ -63,7 +83,7 @@ void Game::Update()
 	if ((InputManager::Instance()->GetActionButton("up") == InputManager::eButtonState::HELD)) force.y = -300.0f * Timer::Instance()->DeltaTime();
 	if ((InputManager::Instance()->GetActionButton("down") == InputManager::eButtonState::HELD)) force.y = 300.0f * Timer::Instance()->DeltaTime();
 
-	if (InputManager::Instance()->GetActionButton("extreamFunk") == InputManager::eButtonState::PRESSED)
+	if (InputManager::Instance()->GetActionButton("extreamFunk") == InputManager::eButtonState::HELD)
 	{
 		AudioSystem::Instance()->PlaySound("extreamFunk");
 	}
@@ -81,9 +101,9 @@ void Game::Update()
 
 	std::vector<Color> colors = { Color::red, Color::green, Color::white };
 	//text->SetColor(colors[rand() % colors.size()]);
-
-
 	//Renderer::Instance()->DrawTexture(texture, position, angle);
+
+	entity->Draw();
 
 	Renderer::Instance()->EndFrame();
 }

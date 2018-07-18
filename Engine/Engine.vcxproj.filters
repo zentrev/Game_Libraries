@@ -96,6 +96,15 @@
     <ClInclude Include="component.h">
       <Filter>Objects\Componets</Filter>
     </ClInclude>
+    <ClInclude Include="transformComponent.h">
+      <Filter>Objects\Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="renderComponent.h">
+      <Filter>Objects\Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="spriteComponent.h">
+      <Filter>Objects\Componets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="textureManager.cpp">
@@ -149,7 +158,10 @@
     <ClCompile Include="entity.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
-    <ClCompile Include="component.cpp">
+    <ClCompile Include="spriteComponent.cpp">
+      <Filter>Objects\Componets</Filter>
+    </ClCompile>
+    <ClCompile Include="transformComponent.cpp">
       <Filter>Objects\Componets</Filter>
     </ClCompile>
   </ItemGroup>

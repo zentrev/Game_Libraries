@@ -10,11 +10,14 @@ public:
 	Entity(const ID& id = ID()) : Object(id) {}
 	virtual ~Entity() {}
 
+	void Update();
+	void Draw();
+
 	void AddComponent(Component* component);
 	void RemoveComponent(Component* component);
 
 	template <typename T>
-	T* GetComponet()
+	T* GetComponent()
 	{
 		T* component = nullptr;
 		for (Component* _component : m_components)

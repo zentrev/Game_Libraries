@@ -2,8 +2,12 @@ c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\vc141.pdb
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\vc141.idb
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\audiosystem.obj
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\color.obj
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\component.obj
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.obj
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\entity.obj
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\id.obj
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\inputmanager.obj
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\object.obj
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\_math.obj
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\matrix22.obj
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\matrix33.obj
@@ -23,9 +27,7 @@ c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.tlog\cl.comm
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.tlog\cl.read.1.tlog
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.tlog\cl.write.1.tlog
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.tlog\engine.write.1u.tlog
-c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.tlog\link.1860.delete.1.tlog
-c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.tlog\link.3800.delete.1.tlog
-c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.tlog\link.8108.delete.1.tlog
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.tlog\link.6824.delete.1.tlog
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.tlog\link.command.1.tlog
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.tlog\link.read.1.tlog
 c:\users\c.t.raines.iii\source\repos\ncgame\engine\x64\debug\engine.tlog\link.write.1.tlog
