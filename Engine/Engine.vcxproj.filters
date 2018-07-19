@@ -34,7 +34,7 @@
     <Filter Include="Objects">
       <UniqueIdentifier>{64c0a3d4-8439-4816-b393-fd37ef5d92ac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Objects\Componets">
+    <Filter Include="Objects\Components">
       <UniqueIdentifier>{06f753c0-fbbb-493c-a280-231ab068a599}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -94,16 +94,25 @@
       <Filter>Objects</Filter>
     </ClInclude>
     <ClInclude Include="component.h">
-      <Filter>Objects\Componets</Filter>
+      <Filter>Objects\Components</Filter>
     </ClInclude>
     <ClInclude Include="transformComponent.h">
-      <Filter>Objects\Componets</Filter>
+      <Filter>Objects\Components</Filter>
     </ClInclude>
     <ClInclude Include="renderComponent.h">
-      <Filter>Objects\Componets</Filter>
+      <Filter>Objects\Components</Filter>
     </ClInclude>
     <ClInclude Include="spriteComponent.h">
-      <Filter>Objects\Componets</Filter>
+      <Filter>Objects\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="controllerComponent.h">
+      <Filter>Objects\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="shipControllerComponent.h">
+      <Filter>Objects\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -159,10 +168,22 @@
       <Filter>Objects</Filter>
     </ClCompile>
     <ClCompile Include="spriteComponent.cpp">
-      <Filter>Objects\Componets</Filter>
+      <Filter>Objects\Components</Filter>
     </ClCompile>
     <ClCompile Include="transformComponent.cpp">
-      <Filter>Objects\Componets</Filter>
+      <Filter>Objects\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="controllerComponent.cpp">
+      <Filter>Objects\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="shipControllerComponent.cpp">
+      <Filter>Objects\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="shitControllerComponent.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

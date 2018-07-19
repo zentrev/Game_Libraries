@@ -149,13 +149,16 @@
     <ClInclude Include="audioSystem.h" />
     <ClInclude Include="color.h" />
     <ClInclude Include="component.h" />
+    <ClInclude Include="controllerComponent.h" />
     <ClInclude Include="engine.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="id.h" />
     <ClInclude Include="inputManager.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="renderComponent.h" />
+    <ClInclude Include="shipControllerComponent.h" />
     <ClInclude Include="spriteComponent.h" />
+    <ClInclude Include="texture.h" />
     <ClInclude Include="transformComponent.h" />
     <ClInclude Include="_math.h" />
     <ClInclude Include="matrix22.h" />
@@ -172,12 +175,16 @@
   <ItemGroup>
     <ClCompile Include="audioSystem.cpp" />
     <ClCompile Include="color.cpp" />
+    <ClCompile Include="controllerComponent.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="id.cpp" />
     <ClCompile Include="inputManager.cpp" />
     <ClCompile Include="object.cpp" />
+    <ClCompile Include="shipControllerComponent.cpp" />
+    <ClCompile Include="shitControllerComponent.cpp" />
     <ClCompile Include="spriteComponent.cpp" />
+    <ClCompile Include="texture.cpp" />
     <ClCompile Include="transformComponent.cpp" />
     <ClCompile Include="_math.cpp" />
     <ClCompile Include="matrix22.cpp" />

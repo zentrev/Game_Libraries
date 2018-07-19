@@ -1,7 +1,5 @@
-﻿  transformComponent.cpp
-  spriteComponent.cpp
-  entity.cpp
-  Generating Code...
-     Creating library C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.lib and object C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.exp
+﻿  shitControllerComponent.cpp
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\shitcontrollercomponent.cpp(25): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\shitcontrollercomponent.cpp(31): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
   Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.dll
   Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.pdb (Partial PDB)
