@@ -88,7 +88,7 @@ void Game::Update()
 		AudioSystem::Instance()->PlaySound("extreamFunk");
 	}
 
-	Matrix22 mx;
+	Matrix22 mx; 
 	//angle -= (steer * 200.0f) * Timer::Instance()->DeltaTime();
 	//mx.Rotate(angle * Math::DegreesToRadians);
 	//force = force * mx;
