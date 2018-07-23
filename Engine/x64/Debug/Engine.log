@@ -1,1 +1,28 @@
-﻿LINK : fatal error LNK1104: cannot open file 'b.obj'
+﻿  vector3D.cpp
+  vector2D.cpp
+  timer.cpp
+  textureManager.cpp
+  textManager.cpp
+  text.cpp
+  renderer.cpp
+  matrix33.cpp
+  matrix22.cpp
+  _math.cpp
+  transformComponent.cpp
+  texture.cpp
+  spriteComponent.cpp
+  shipControllerComponent.cpp
+  scene.cpp
+  object.cpp
+  inputManager.cpp
+c:\users\c.t.raines.iii\source\repos\ncgame\engine\inputmanager.cpp(66): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  id.cpp
+  entity.cpp
+  engine.cpp
+  Generating Code...
+  Compiling...
+  controllerComponent.cpp
+  color.cpp
+  audioSystem.cpp
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'b.obj'
