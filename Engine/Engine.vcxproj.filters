@@ -114,6 +114,12 @@
     <ClInclude Include="shipControllerComponent.h">
       <Filter>Objects\Components</Filter>
     </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="imageLibrary.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="textureManager.cpp">
@@ -182,8 +188,8 @@
     <ClCompile Include="shipControllerComponent.cpp">
       <Filter>Objects\Components</Filter>
     </ClCompile>
-    <ClCompile Include="shitControllerComponent.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="scene.cpp">
+      <Filter>Objects</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
