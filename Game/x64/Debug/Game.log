@@ -1,7 +1,1 @@
-﻿  main.cpp
-  game.cpp
-c:\users\c.t.raines.iii\source\repos\ncgame\game\game.cpp(34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-c:\users\c.t.raines.iii\source\repos\ncgame\game\game.cpp(35): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-c:\users\c.t.raines.iii\source\repos\ncgame\game\game.cpp(47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-LINK : fatal error LNK1104: cannot open file 'C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.lib'
+﻿LINK : fatal error LNK1104: cannot open file 'C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.lib'

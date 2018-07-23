@@ -117,9 +117,6 @@
     <ClInclude Include="scene.h">
       <Filter>Objects</Filter>
     </ClInclude>
-    <ClInclude Include="imageLibrary.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="textureManager.cpp">
