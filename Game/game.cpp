@@ -31,7 +31,7 @@ bool Game::Initalize()
 	for (int i = 0; i < 10; i++)
 	{
 
-		float x = i * 50;
+		float x = 300;
 		float y = i * 50;
 
 		entity = new Entity(ID("player"));
@@ -40,11 +40,11 @@ bool Game::Initalize()
 		entity->AddComponent(transformComponent);
 
 		SpriteComponent* spriteComponent = new SpriteComponent(entity);
-		spriteComponent->Create("..\\content\\Sprites\\ship.bmp");
+		spriteComponent->Create("..\\content\\Sprites\\ship.png");
 		entity->AddComponent(spriteComponent);
 
 		ShipControllerComponent* shipControllerComponent = new ShipControllerComponent(entity);
-		shipControllerComponent->Create(i * 25);
+		shipControllerComponent->Create((i+1) * 250);
 		entity->AddComponent(shipControllerComponent);
 
 		scene->AddEntity(entity);

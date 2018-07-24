@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Engine"
+    "\\Content",
+    "\\Content\\Sprites",
+    "\\Engine",
+    "\\Game"
   ],
-  "SelectedNode": "\\Engine\\renderComponent.h",
+  "SelectedNode": "\\Content\\Sprites\\ship.png",
   "PreviewInSolutionExplorer": false
 }
