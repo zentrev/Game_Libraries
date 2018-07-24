@@ -19,28 +19,31 @@
     <Filter Include="Graphics">
       <UniqueIdentifier>{4d8e8a6a-a867-490b-9faa-000b9904c00f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphics\Text">
+      <UniqueIdentifier>{de3bd7de-d293-4ca6-9e38-5847a33fbf37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic">
+      <UniqueIdentifier>{115f6d74-d57d-41ed-a580-89e269228155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{67078a00-5da7-4d09-b91b-88b5450b60af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic\Input">
+      <UniqueIdentifier>{8e7b74ff-99a4-4de0-8250-9a1a41d96472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{64c0a3d4-8439-4816-b393-fd37ef5d92ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Components">
+      <UniqueIdentifier>{06f753c0-fbbb-493c-a280-231ab068a599}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="engine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="singleton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inputManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="audioSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="renderer.h">
       <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="textureManager.h">
       <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="math.h">
-      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="matrix22.h">
       <Filter>Math</Filter>
@@ -57,31 +60,70 @@
     <ClInclude Include="color.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="text.h">
-      <Filter>Header Files</Filter>
+      <Filter>Graphics\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="textManager.h">
+      <Filter>Graphics\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="engine.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="audioSystem.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="inputManager.h">
+      <Filter>Logic\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="_math.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="id.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>Objects\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="transformComponent.h">
+      <Filter>Objects\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="renderComponent.h">
+      <Filter>Objects\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="spriteComponent.h">
+      <Filter>Objects\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="controllerComponent.h">
+      <Filter>Objects\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="shipControllerComponent.h">
+      <Filter>Objects\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="engine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="inputManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="audioSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="textureManager.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
     <ClCompile Include="renderer.cpp">
       <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="math.cpp">
-      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="matrix22.cpp">
       <Filter>Math</Filter>
@@ -98,11 +140,53 @@
     <ClCompile Include="color.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="text.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Graphics\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="textManager.cpp">
+      <Filter>Graphics\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="engine.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="audioSystem.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="inputManager.cpp">
+      <Filter>Logic\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="_math.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="id.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="object.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="spriteComponent.cpp">
+      <Filter>Objects\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="transformComponent.cpp">
+      <Filter>Objects\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="controllerComponent.cpp">
+      <Filter>Objects\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="shipControllerComponent.cpp">
+      <Filter>Objects\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>Objects</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

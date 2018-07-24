@@ -69,17 +69,32 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib; SDL2main.lib; SDL2_ttf.lib</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod_vc.lib;</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -89,12 +104,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib; SDL2main.lib; SDL2_ttf.lib</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod64_vc.lib;</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -105,12 +120,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL2.lib; SDL2main.lib; SDL2_ttf.lib</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod_vc.lib;</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -121,26 +136,38 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL2.lib; SDL2main.lib; SDL2_ttf.lib</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod64_vc.lib;</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="audioSystem.h" />
     <ClInclude Include="color.h" />
+    <ClInclude Include="component.h" />
+    <ClInclude Include="controllerComponent.h" />
     <ClInclude Include="engine.h" />
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="id.h" />
     <ClInclude Include="inputManager.h" />
-    <ClInclude Include="math.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="renderComponent.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="shipControllerComponent.h" />
+    <ClInclude Include="spriteComponent.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="transformComponent.h" />
+    <ClInclude Include="_math.h" />
     <ClInclude Include="matrix22.h" />
     <ClInclude Include="matrix33.h" />
     <ClInclude Include="renderer.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="text.h" />
+    <ClInclude Include="textManager.h" />
     <ClInclude Include="textureManager.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="vector2D.h" />
@@ -149,13 +176,23 @@
   <ItemGroup>
     <ClCompile Include="audioSystem.cpp" />
     <ClCompile Include="color.cpp" />
+    <ClCompile Include="controllerComponent.cpp" />
     <ClCompile Include="engine.cpp" />
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="id.cpp" />
     <ClCompile Include="inputManager.cpp" />
-    <ClCompile Include="math.cpp" />
+    <ClCompile Include="object.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="shipControllerComponent.cpp" />
+    <ClCompile Include="spriteComponent.cpp" />
+    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="transformComponent.cpp" />
+    <ClCompile Include="_math.cpp" />
     <ClCompile Include="matrix22.cpp" />
     <ClCompile Include="matrix33.cpp" />
     <ClCompile Include="renderer.cpp" />
     <ClCompile Include="text.cpp" />
+    <ClCompile Include="textManager.cpp" />
     <ClCompile Include="textureManager.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="vector2D.cpp" />
