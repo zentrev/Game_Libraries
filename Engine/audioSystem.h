@@ -9,6 +9,7 @@ class ENGINE_API AudioSystem : public Singleton<AudioSystem>
 {
 public:
 	bool Initialize(Engine* engine);
+	void Update();
 	void Shutdown();
 
 	void AddSound(const std::string& id, const std::string& filename);

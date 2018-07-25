@@ -1,5 +1,7 @@
-﻿  game.cpp
-c:\users\c.t.raines.iii\source\repos\ncgame\game\game.cpp(35): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-c:\users\c.t.raines.iii\source\repos\ncgame\game\game.cpp(47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  shipControllerComponent.cpp
+  game.cpp
+c:\users\c.t.raines.iii\source\repos\ncgame\game\game.cpp(36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\c.t.raines.iii\source\repos\ncgame\game\game.cpp(52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   Game.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Game.exe
   Game.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Game.pdb (Partial PDB)

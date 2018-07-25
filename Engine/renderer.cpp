@@ -9,6 +9,10 @@ bool Renderer::Initialize(Engine * engine)
 	return true;
 }
 
+void Renderer::Update()
+{
+}
+
 void Renderer::Shutdown()
 {
 	SDL_DestroyRenderer(m_renderer);

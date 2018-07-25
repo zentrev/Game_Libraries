@@ -19,6 +19,7 @@
 #include "spriteComponent.h"
 #include "shipControllerComponent.h"
 #include "scene.h"
+#include "kinematicComponent.h"
 
 Entity* entity = nullptr;
 Scene* scene = new Scene();
@@ -38,6 +39,10 @@ bool Game::Initalize()
 		TransformComponent* transformComponent = new TransformComponent(entity);
 		transformComponent->Create(Vector2D(x, y));
 		entity->AddComponent(transformComponent);
+
+		KinematicComponent* kinematic = new KinematicComponent(entity);
+		kinematic->Create();
+		entity->AddComponent(kinematic);
 
 		SpriteComponent* spriteComponent = new SpriteComponent(entity);
 		spriteComponent->Create("..\\content\\Sprites\\ship.png");

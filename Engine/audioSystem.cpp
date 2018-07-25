@@ -12,6 +12,10 @@ bool AudioSystem::Initialize(Engine * engine)
 	return true;
 }
 
+void AudioSystem::Update()
+{
+}
+
 void AudioSystem::Shutdown()
 {
 	for(auto& sound : m_sounds)

@@ -11,6 +11,7 @@ class ENGINE_API Renderer : public Singleton<Renderer>
 {
 public:
 	bool Initialize(Engine* engine);
+	void Update();
 	void Shutdown();
 
 	SDL_Renderer* GetRenderer() { return m_renderer; }
