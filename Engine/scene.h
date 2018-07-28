@@ -23,5 +23,5 @@ public:
 	Entity* FindEntity(const ID& id);
 
 protected:
-	std::vector<Entity*> m_entiites;
+	std::vector<Entity*> m_entites;
 };

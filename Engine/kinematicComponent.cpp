@@ -2,7 +2,6 @@
 #include "timer.h"
 #include "physics.h"
 #include "engine.h"
-#include "transformComponent.h"
 #include "entity.h"
 
 void KinematicComponent::Create(float velocityMax, float dampening, bool enableGravity)
@@ -33,15 +32,34 @@ void KinematicComponent::Update()
 		m_velocity = m_velocity.Normalized() * m_velocityMax;
 	}
 
-	TransformComponent* transform = m_owner->GetComponent<TransformComponent>();
-	if (transform)
+	m_owner->GetTransform().position = m_owner->GetTransform().position + (m_velocity* dt);
+	
+	m_velocity = m_velocity * pow(m_dampening,dt);
+	if (m_forceType == eForceType::IMPULSE)
 	{
-		transform->position = transform->position + (m_velocity *dt);
+		m_force = Vector2D::zero;
 	}
 }
 
 void KinematicComponent::ApplyForce(const Vector2D & force, eForceType forceType)
 {
+	m_forceType = forceType;
+
+	switch (m_forceType)
+	{
+	case FORCE:
+	case IMPULSE:
+		m_force = force;
+		break;
+	case VELOCITY:
+		m_force = Vector2D::zero;
+		m_velocity = force;
+		break;
+	default:
+		assert(1);
+		break;
+	}
+
 	m_force = force;
 }
 

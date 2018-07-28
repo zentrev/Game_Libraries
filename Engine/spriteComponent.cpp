@@ -1,7 +1,6 @@
 #include "spriteComponent.h"
 #include "renderer.h"
 #include "entity.h"
-#include "transformComponent.h"
 #include "texture.h"
 
 void SpriteComponent::Create(const std::string & textureName)
@@ -22,6 +21,5 @@ void SpriteComponent::Update()
 
 void SpriteComponent::Draw()
 {
-	TransformComponent* transform = m_owner->GetComponent<TransformComponent>();
-	Renderer::Instance()->DrawTexture(m_texture, transform->position, transform->scale, transform->rotation);
+	Renderer::Instance()->DrawTexture(m_texture, m_owner->GetTransform().position, m_owner->GetTransform().scale, m_owner->GetTransform().rotation);
 }

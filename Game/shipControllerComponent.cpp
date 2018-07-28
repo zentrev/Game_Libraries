@@ -1,16 +1,18 @@
 #include "shipControllerComponent.h"
 #include "inputManager.h"
-#include "transformComponent.h"
 #include "entity.h"
 #include "timer.h"
 #include "entity.h"
 #include "kinematicComponent.h"
+#include "missile.h"
 
 void ShipControllerComponent::Create(float speed)
 {
 	m_speed = speed;
 	InputManager::Instance()->AddAction("left", SDL_SCANCODE_LEFT, InputManager::eDevice::KEYBOARD);
 	InputManager::Instance()->AddAction("right", SDL_SCANCODE_RIGHT, InputManager::eDevice::KEYBOARD);
+	InputManager::Instance()->AddAction("fire", SDL_SCANCODE_SPACE, InputManager::eDevice::KEYBOARD);
+
 }
 
 void ShipControllerComponent::Destroy()
@@ -33,11 +35,20 @@ void ShipControllerComponent::Update()
 		force = force + Vector2D::right;
 	}
 
+	if ((InputManager::Instance()->GetActionButton("fire") == InputManager::eButtonState::PRESSED) ||
+		(InputManager::Instance()->GetActionButton("fire") == InputManager::eButtonState::IDLE))
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			Missile* missile = new Missile(m_owner->GetScene());
+			missile->Create(m_owner->GetTransform().position, Vector2D::down, 800.0f);
+			m_owner->GetScene()->AddEntity(missile);
+		}
+	}
+
 	KinematicComponent* kinematic = m_owner->GetComponent<KinematicComponent>();
 	if (kinematic)
 	{
-		kinematic->ApplyForce(force * m_speed, KinematicComponent::FORCE);
-	}
-
-	
+		kinematic->ApplyForce(force * m_speed, KinematicComponent::IMPULSE);
+	}	
 }

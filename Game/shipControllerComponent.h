@@ -12,5 +12,4 @@ public:
 
 protected:
 	float m_speed;
-
 };

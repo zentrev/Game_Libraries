@@ -11,6 +11,9 @@
     <Filter Include="Logic">
       <UniqueIdentifier>{2dbc95a4-bda3-4ed0-b954-67f8986f1ef9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{ed7def6d-84eb-420a-bc78-f5a052f37415}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="shipControllerComponent.cpp">
@@ -22,6 +25,12 @@
     <ClCompile Include="game.cpp">
       <Filter>Logic</Filter>
     </ClCompile>
+    <ClCompile Include="ship.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="missile.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shipControllerComponent.h">
@@ -29,6 +38,12 @@
     </ClInclude>
     <ClInclude Include="game.h">
       <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="ship.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="missile.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

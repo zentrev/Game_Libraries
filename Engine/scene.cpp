@@ -9,50 +9,52 @@ bool Scene::Initialize()
 
 void Scene::Shutdown()
 {
-	for (Entity* entity : m_entiites)
+	for (Entity* entity : m_entites)
 	{
 		delete entity;
 	}
-	m_entiites.clear();
+	m_entites.clear();
 }
 
 void Scene::Update()
 {
-	for (Entity* enity : m_entiites) {
-		enity->Update();
-	}
+	size_t size = m_entites.size();
+	for (size_t i = 0; i < size; i++)
+	{
+		m_entites[i]->Update();
+	}	
 }
 
 void Scene::Draw()
 {
-	for (Entity* enity : m_entiites) {
+	for (Entity* enity : m_entites) {
 		enity->Draw();
 	}
 }
 
 void Scene::AddEntity(Entity * entity)
 {
-	assert(std::find(m_entiites.begin(), m_entiites.end(), entity) == m_entiites.end());
+	assert(std::find(m_entites.begin(), m_entites.end(), entity) == m_entites.end());
 	assert(entity);
-	m_entiites.push_back(entity);
+	m_entites.push_back(entity);
 }
 
 void Scene::RemoveEntity(Entity * entity)
 {
-	assert(std::find(m_entiites.begin(), m_entiites.end(), entity) != m_entiites.end());
+	assert(std::find(m_entites.begin(), m_entites.end(), entity) != m_entites.end());
 	assert(entity);
 
-	auto iter = std::find(m_entiites.begin(), m_entiites.end(), entity);
-	if (iter != m_entiites.end())
+	auto iter = std::find(m_entites.begin(), m_entites.end(), entity);
+	if (iter != m_entites.end())
 	{
-		m_entiites.erase(iter);
+		m_entites.erase(iter);
 	}
 }
 
 Entity * Scene::FindEntity(const ID & id)
 {
 	Entity* entity = nullptr;
-	for (Entity* _enity : m_entiites)
+	for (Entity* _enity : m_entites)
 	{
 		if (*_enity == id)
 		{

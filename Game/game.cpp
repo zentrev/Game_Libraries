@@ -14,45 +14,24 @@
 #include "matrix33.h"
 #include "vector2D.h"
 #include "vector3D.h"
-#include "entity.h"
-#include "transformComponent.h"
-#include "spriteComponent.h"
-#include "shipControllerComponent.h"
 #include "scene.h"
-#include "kinematicComponent.h"
+#include "ship.h"
 
-Entity* entity = nullptr;
-Scene* scene = new Scene();
+Scene* m_scene = new Scene();
 
 bool Game::Initalize()
 {
 	bool success = m_engine->Initialize();
-	scene->Initialize();
+	m_scene->Initialize();
 
-	for (int i = 0; i < 10; i++)
+	//for (int i = 0; i < 10; i++)
 	{
+		Ship* ship = new Ship(m_scene);
 
-		float x = 300;
-		float y = i * 50;
-
-		entity = new Entity(ID("player"));
-		TransformComponent* transformComponent = new TransformComponent(entity);
-		transformComponent->Create(Vector2D(x, y));
-		entity->AddComponent(transformComponent);
-
-		KinematicComponent* kinematic = new KinematicComponent(entity);
-		kinematic->Create();
-		entity->AddComponent(kinematic);
-
-		SpriteComponent* spriteComponent = new SpriteComponent(entity);
-		spriteComponent->Create("..\\content\\Sprites\\ship.png");
-		entity->AddComponent(spriteComponent);
-
-		ShipControllerComponent* shipControllerComponent = new ShipControllerComponent(entity);
-		shipControllerComponent->Create((i+1) * 250);
-		entity->AddComponent(shipControllerComponent);
-
-		scene->AddEntity(entity);
+		float x = (float)(rand() % 800);
+		float y = (float)(rand() % 600);
+		ship->Create(Vector2D(x, y));
+		m_scene->AddEntity(ship);
 	}
 
 	m_running = success;
@@ -68,13 +47,13 @@ void Game::Update()
 {
 	m_running = !m_engine->IsQuit();
 	m_engine->Update();
-	scene->Update();
+	m_scene->Update();
 
 
 	Renderer::Instance()->BeginFrame();
 	Renderer::Instance()->SetColor(Color::black);
 
-	scene->Draw();
+	m_scene->Draw();
 
 	Renderer::Instance()->EndFrame();
 }
