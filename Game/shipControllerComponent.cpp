@@ -35,8 +35,7 @@ void ShipControllerComponent::Update()
 		force = force + Vector2D::right;
 	}
 
-	if ((InputManager::Instance()->GetActionButton("fire") == InputManager::eButtonState::PRESSED) ||
-		(InputManager::Instance()->GetActionButton("fire") == InputManager::eButtonState::IDLE))
+	if (InputManager::Instance()->GetActionButton("fire") == InputManager::eButtonState::PRESSED)
 	{
 		for (int i = 0; i < 10; i++)
 		{

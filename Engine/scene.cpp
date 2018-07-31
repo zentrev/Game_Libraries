@@ -19,9 +19,9 @@ void Scene::Shutdown()
 void Scene::Update()
 {
 	size_t size = m_entites.size();
-	for (size_t i = 0; i < size; i++)
+	for (Entity* entity : m_entites)
 	{
-		m_entites[i]->Update();
+		entity->Update();
 	}	
 }
 
@@ -39,7 +39,7 @@ void Scene::AddEntity(Entity * entity)
 	m_entites.push_back(entity);
 }
 
-void Scene::RemoveEntity(Entity * entity)
+void Scene::RemoveEntity(Entity * entity, bool destory)
 {
 	assert(std::find(m_entites.begin(), m_entites.end(), entity) != m_entites.end());
 	assert(entity);
@@ -47,6 +47,11 @@ void Scene::RemoveEntity(Entity * entity)
 	auto iter = std::find(m_entites.begin(), m_entites.end(), entity);
 	if (iter != m_entites.end())
 	{
+		if (destory)
+		{
+			(*iter)->Destory();
+			delete *iter;
+		}
 		m_entites.erase(iter);
 	}
 }

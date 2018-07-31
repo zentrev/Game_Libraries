@@ -12,6 +12,6 @@ void Missile::Create(const Vector2D& position, const Vector2D& direction, float 
 	kinematic->ApplyForce(direction * speed, KinematicComponent::FORCE);
 
 	SpriteComponent* spriteComponent = AddComponent<SpriteComponent>();
-	spriteComponent->Create("..\\content\\Sprites\\missile.png");
+	spriteComponent->Create("..\\content\\Sprites\\missile.png", Vector2D(0.5f, 0.5f));
 
 }

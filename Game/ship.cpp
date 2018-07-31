@@ -11,7 +11,7 @@ void Ship::Create(const Vector2D& position)
 	kinematic->Create(1600.0f, 0.3f);
 
 	SpriteComponent* spriteComponent = AddComponent<SpriteComponent>();
-	spriteComponent->Create("..\\content\\Sprites\\ship.png");
+	spriteComponent->Create("..\\content\\Sprites\\ship.png", Vector2D(0.5f, 0.5f));
 
 	ShipControllerComponent* shipControllerComponent = AddComponent<ShipControllerComponent>();
 	shipControllerComponent->Create(250);
