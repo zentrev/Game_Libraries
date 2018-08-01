@@ -11,13 +11,14 @@
 #include <cassert>
 #include <iostream>
 #include <string>
-
+#include "fileSystem.h"
 
 bool Engine::Initialize()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);	
 	m_window = SDL_CreateWindow("Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN);
 	
+	FileSystem::Instance()->Initialize(this);
 	Timer::Instance()->Initialize(this);
 	Renderer::Instance()->Initialize(this);
 	InputManager::Instance()->Initialize(this);
@@ -37,6 +38,7 @@ void Engine::Shutdown()
 	TextManager::Instance()->Shutdown();
 	TextureManager::Instance()->Shutdown();
 	Renderer::Instance()->Shutdown();
+	FileSystem::Instance()->ShutDown();
 
 	SDL_DestroyWindow(m_window);
 	TTF_Quit();
@@ -50,6 +52,7 @@ void Engine::Update()
 	InputManager::Instance()->Update();
 	AudioSystem::Instance()->Update();
 	Physics::Instance()->Update();
+	FileSystem::Instance()->Update();
 	//Renderer -> Update()
 
 

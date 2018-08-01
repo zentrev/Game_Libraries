@@ -31,6 +31,9 @@
     <ClCompile Include="missile.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shipControllerComponent.h">
@@ -43,6 +46,9 @@
       <Filter>Objects</Filter>
     </ClInclude>
     <ClInclude Include="missile.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
       <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>

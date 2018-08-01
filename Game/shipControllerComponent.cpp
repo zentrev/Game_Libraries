@@ -5,6 +5,7 @@
 #include "entity.h"
 #include "kinematicComponent.h"
 #include "missile.h"
+#include "audioSystem.h"
 
 void ShipControllerComponent::Create(float speed)
 {
@@ -13,6 +14,7 @@ void ShipControllerComponent::Create(float speed)
 	InputManager::Instance()->AddAction("right", SDL_SCANCODE_RIGHT, InputManager::eDevice::KEYBOARD);
 	InputManager::Instance()->AddAction("fire", SDL_SCANCODE_SPACE, InputManager::eDevice::KEYBOARD);
 
+	AudioSystem::Instance()->AddSound("fire", "laser.wav");
 }
 
 void ShipControllerComponent::Destroy()
@@ -35,14 +37,14 @@ void ShipControllerComponent::Update()
 		force = force + Vector2D::right;
 	}
 
-	if (InputManager::Instance()->GetActionButton("fire") == InputManager::eButtonState::PRESSED)
+	if (InputManager::Instance()->GetActionButton("fire") == InputManager::eButtonState::HELD)
 	{
-		for (int i = 0; i < 10; i++)
-		{
-			Missile* missile = new Missile(m_owner->GetScene());
-			missile->Create(m_owner->GetTransform().position, Vector2D::down, 800.0f);
-			m_owner->GetScene()->AddEntity(missile);
-		}
+
+		Missile* missile = new Missile(m_owner->GetScene());
+		missile->Create(m_owner->GetTransform().position, Vector2D::down, 800.0f);
+		m_owner->GetScene()->AddEntity(missile);
+		AudioSystem::Instance()->PlaySound("fire");
+
 	}
 
 	KinematicComponent* kinematic = m_owner->GetComponent<KinematicComponent>();

@@ -1,6 +1,6 @@
 #include "audioSystem.h"
+#include "fileSystem.h"
 #include <cassert>
-
 
 bool AudioSystem::Initialize(Engine * engine)
 {
@@ -26,11 +26,12 @@ void AudioSystem::Shutdown()
 	m_fmodSystem->release();
 }
 
-void AudioSystem::AddSound(const std::string & id, const std::string & filename)
+void AudioSystem::AddSound(const std::string & id, const std::string & audioName)
 {
 	auto iter = m_sounds.find(id);
 	if (iter == m_sounds.end())
 	{
+		std::string filename = FileSystem::Instance()->GetPathName() + audioName;
 		FMOD::Sound* _sound = nullptr;
 		m_fmodSystem->createSound(filename.c_str(), FMOD_DEFAULT, nullptr, &_sound);
 		m_sounds[id] = _sound;
