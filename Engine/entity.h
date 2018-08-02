@@ -54,8 +54,12 @@ public:
 	eState GetState() { return m_state; }
 	void SetState(eState state) { m_state = state; }
 
+	void SetTag(const ID& tag) { m_tag = tag; }
+	const ID& GetTag() { return m_tag; }
+
 protected:
 	Transform m_transform;
+	ID m_tag;
 	Scene* m_scene;
 	std::vector<Component*> m_components;
 	eState m_state = ACTIVE;

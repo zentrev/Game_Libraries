@@ -2,6 +2,7 @@
 #include "id.h"
 #include "engine.h"
 #include <list>
+#include <vector>
 
 class Entity;
 
@@ -18,9 +19,10 @@ public:
 	void Draw();
 
 	void AddEntity(Entity* entity);
-	void RemoveEntity(Entity* entity, bool destroy = true);
+	std::list<Entity*>::iterator RemoveEntity(Entity* entity, bool destroy = true);
 
-	Entity* FindEntity(const ID& id);
+	Entity* GetEntityWithID(const ID& id);
+	std::vector<Entity*> GetEnitiesWithTag(const ID& tag);
 
 protected:
 	std::list<Entity*> m_entites;

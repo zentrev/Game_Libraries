@@ -39,17 +39,19 @@ void ShipControllerComponent::Update()
 
 	if (InputManager::Instance()->GetActionButton("fire") == InputManager::eButtonState::HELD)
 	{
-
-		Missile* missile = new Missile(m_owner->GetScene());
-		missile->Create(m_owner->GetTransform().position, Vector2D::down, 800.0f);
-		m_owner->GetScene()->AddEntity(missile);
-		AudioSystem::Instance()->PlaySound("fire");
-
+		std::vector<Entity*> missiles = m_owner->GetScene()->GetEnitiesWithTag("playermissile");
+		if (missiles.size() < 2)
+		{
+			Missile* missile = new Missile(m_owner->GetScene());
+			missile->Create(m_owner->GetTransform().position, Vector2D::down, 500.0f);
+			m_owner->GetScene()->AddEntity(missile);
+			AudioSystem::Instance()->PlaySound("fire");
+		}
 	}
 
 	KinematicComponent* kinematic = m_owner->GetComponent<KinematicComponent>();
 	if (kinematic)
 	{
-		kinematic->ApplyForce(force * m_speed, KinematicComponent::IMPULSE);
+		kinematic->ApplyForce(force * m_speed, KinematicComponent::FORCE);
 	}	
 }

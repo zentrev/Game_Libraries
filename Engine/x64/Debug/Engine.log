@@ -1,7 +1,8 @@
-﻿  audioSystem.cpp
+﻿  spriteComponent.cpp
+  scene.cpp
+  kinematicComponent.cpp
+  entity.cpp
   Generating Code...
-  Skipping... (no relevant changes detected)
-  engine.cpp
      Creating library C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.lib and object C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.exp
   Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.dll
   Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.pdb (Partial PDB)

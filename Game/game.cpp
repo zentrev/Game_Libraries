@@ -16,19 +16,21 @@ bool Game::Initalize()
 
 	//for (int i = 0; i < 10; i++)
 	{
-		Ship* ship = new Ship(m_scene);
+		Ship* ship = new Ship(m_scene, "player");
 
 		
 		ship->Create(Vector2D(400, 525));
 		m_scene->AddEntity(ship);
 	}
 
-	Enemy* enemy = new Enemy(m_scene);
-
-	float x = (float)(rand() % 800);
-	float y = (float)(rand() % 600);
-	enemy->Create(Vector2D(x, y));
-	m_scene->AddEntity(enemy);
+	for (int i = 0; i < 10; i++)
+	{
+		Enemy* enemy = new Enemy(m_scene);
+		float x = Math::GetRandomRange(0.0f, 800.0f);
+		float y = Math::GetRandomRange(-30.0f, -300.0f);
+		enemy->Create(Vector2D(x, y));
+		m_scene->AddEntity(enemy);
+	}
 
 	m_running = success;
 	return success;

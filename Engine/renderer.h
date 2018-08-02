@@ -24,6 +24,7 @@ public:
 	void DrawTexture(SDL_Texture* texture, const Vector2D& position, const Vector2D& scale, float angle);
 	void DrawTexture(Texture* texture, const Vector2D& position, const Vector2D& scale, float angle);
 
+	Vector2D GetSize();
 
 	friend Singleton<Renderer>;
 
