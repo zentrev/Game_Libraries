@@ -6,14 +6,14 @@
 
 void Missile::Create(const Vector2D& position, const Vector2D& direction, float speed)
 {
-	m_lifetime = 1.2f;
+	m_lifetime = .9f;
 	SetTag("playermissile");
 
 	m_transform.position = position;
 	m_transform.scale = Vector2D(2.0f, 2.0f);
 
 	KinematicComponent* kinematic = AddComponent<KinematicComponent>();
-	kinematic->Create(3600.0f, 0.3f);
+	kinematic->Create(70000.0f, 0.3f);
 	kinematic->ApplyForce(direction * speed, KinematicComponent::FORCE);
 
 	SpriteComponent* spriteComponent = AddComponent<SpriteComponent>();
