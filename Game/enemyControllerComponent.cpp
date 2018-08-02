@@ -26,7 +26,7 @@ void EnemyControllerComponent::Update()
 	{
 		float dx = player->GetTransform().position.x - m_owner->GetTransform().position.x;
 		if (dx < -32.0f) force.x = -1.0f;
-		if (dx > -32.0f) force.x = -1.0f;
+		if (dx > 32.0f) force.x = 1.0f;
 	}
 
 	KinematicComponent* kinematic = m_owner->GetComponent<KinematicComponent>();

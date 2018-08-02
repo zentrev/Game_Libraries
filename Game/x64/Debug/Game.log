@@ -1,11 +1,3 @@
-﻿  ship.cpp
-  missile.cpp
-  game.cpp
-  enemy.cpp
-  Generating Code...
-  Compiling...
-  shipControllerComponent.cpp
-  enemyControllerComponent.cpp
-  Generating Code...
+﻿  enemyControllerComponent.cpp
   Game.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Game.exe
   Game.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Game.pdb (Partial PDB)
