@@ -13,15 +13,11 @@ bool Game::Initalize()
 	m_scene->Initialize();
 
 	FileSystem::Instance()->SetPathName("..\\content\\galaga\\");
-
-	//for (int i = 0; i < 10; i++)
-	{
-		Ship* ship = new Ship(m_scene, "player");
-
-		
-		ship->Create(Vector2D(400, 525));
-		m_scene->AddEntity(ship);
-	}
+	
+	Ship* ship = new Ship(m_scene, "player");
+	ship->Create(Vector2D(400, 525));
+	m_scene->AddEntity(ship);
+	
 
 	for (int i = 0; i < 50; i++)
 	{
