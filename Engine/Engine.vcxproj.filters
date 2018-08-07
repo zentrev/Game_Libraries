@@ -43,6 +43,9 @@
     <Filter Include="Components">
       <UniqueIdentifier>{06f753c0-fbbb-493c-a280-231ab068a599}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Event">
+      <UniqueIdentifier>{fa3d9378-b774-4695-b788-e67cc965b6d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="renderer.h">
@@ -141,6 +144,12 @@
     <ClInclude Include="aabbComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
+    <ClInclude Include="event.h">
+      <Filter>Event</Filter>
+    </ClInclude>
+    <ClInclude Include="eventManager.h">
+      <Filter>Event</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="textureManager.cpp">
@@ -223,6 +232,9 @@
     </ClCompile>
     <ClCompile Include="aabbComponent.cpp">
       <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="eventManager.cpp">
+      <Filter>Event</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

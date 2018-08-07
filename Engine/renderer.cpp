@@ -31,7 +31,7 @@ void Renderer::EndFrame()
 
 void Renderer::SetColor(const Color & color)
 {
-	SDL_SetRenderDrawColor(m_renderer, color.ConvertU8(0), color.ConvertU8(0), color.ConvertU8(0), 255);
+	SDL_SetRenderDrawColor(m_renderer, color.ConvertU8(0), color.ConvertU8(1), color.ConvertU8(2), 255);
 }
 
 void Renderer::DrawTexture(SDL_Texture * texture, const Vector2D & position, float angle)
@@ -68,7 +68,7 @@ void Renderer::DebugDrawLine(const Vector2D & start, const Vector2D & end, const
 	int y2 = static_cast<int>(end.y);
 
 	SetColor(color);
-	SDL_RenderDrawLine(m_renderer, x1, y2, x2, y2);
+	SDL_RenderDrawLine(m_renderer, x1, y1, x2, y2);
 }
 
 Vector2D Renderer::GetSize()

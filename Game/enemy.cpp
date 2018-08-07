@@ -3,11 +3,14 @@
 #include "kinematicComponent.h"
 #include "spriteComponent.h"
 #include "renderer.h"
+#include "aabbComponent.h"
 
 void Enemy::Create(const Vector2D& position)
 {
 	m_transform.position = position;
 	m_transform.scale = Vector2D(2.0f, 2.0f);
+
+	SetTag("enemy");
 
 	KinematicComponent* kinematic = AddComponent<KinematicComponent>();
 	kinematic->Create(1600.0f, 0.3f);
@@ -17,6 +20,9 @@ void Enemy::Create(const Vector2D& position)
 
 	EnemyControllerComponent* enemyControllerComponent = AddComponent<EnemyControllerComponent>();
 	enemyControllerComponent->Create(250);
+
+	AABBComponent* aabbComponent = AddComponent<AABBComponent>();
+	aabbComponent->Create();
 }
 
 void Enemy::
@@ -34,5 +40,20 @@ Update()
 	//m_transform.position.x = Math::Clamp(m_transform.position.x, 0.0f, size.x);
 	//m_transform.position.y = Math::Clamp(m_transform.position.y, 0.0f, size.y);
 
+}
+
+void Enemy::OnEvent(const Event& event)
+{
+	if (event.eventID == "collision")
+	{
+		if (event.sender->GetTag() == "playermissile")
+		{
+			SetState(Entity::DESTORY);
+		}
+		if (event.sender->GetTag() == "player")
+		{
+			SetState(Entity::DESTORY);
+		}
+	}
 }
 

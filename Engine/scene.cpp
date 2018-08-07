@@ -1,5 +1,8 @@
 #include "scene.h"
 #include "entity.h"
+#include "collisionComponent.h"
+#include "eventManager.h"
+#include "event.h"
 #include <assert.h>
 #include <vector>
 
@@ -23,6 +26,37 @@ void Scene::Update()
 	for (Entity* entity : m_entites)
 	{
 		entity->Update();
+	}
+
+	std::vector<ICollisionComponent*> collisionComponents;
+	for (Entity* entity : m_entites)
+	{
+		ICollisionComponent* collisionComponent =entity->GetComponent<ICollisionComponent>();
+		if(collisionComponent)
+		{
+			collisionComponents.push_back(collisionComponent);
+		}
+	}
+
+	for (size_t i = 0; i < collisionComponents.size(); i++)
+	{
+		for (size_t j = i+1; j < collisionComponents.size(); j++)
+		{
+			if (collisionComponents[i]->Intersects(collisionComponents[j]))
+			{
+ 				Event event;
+				event.eventID = "collision";
+
+				event.reciver = collisionComponents[i]->GetOwner();
+				event.sender = collisionComponents[j]->GetOwner();
+				EventManager::Instance()->SendMessage(event);
+
+				event.reciver = collisionComponents[j]->GetOwner();
+				event.sender = collisionComponents[i]->GetOwner();
+				EventManager::Instance()->SendMessage(event);
+			}
+		}
+
 	}
 
 	std::list<Entity*>::iterator iter = m_entites.begin();
@@ -63,7 +97,7 @@ std::list<Entity*>::iterator Scene::RemoveEntity(Entity * entity, bool destory)
 	{
 		if (destory)
 		{
-			(*iter)->Destory();
+			 (*iter)->Destory();
 			delete *iter;
 		}
 		iter = m_entites.erase(iter);

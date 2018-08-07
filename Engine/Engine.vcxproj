@@ -155,6 +155,8 @@
     <ClInclude Include="controllerComponent.h" />
     <ClInclude Include="engine.h" />
     <ClInclude Include="entity.h" />
+    <ClInclude Include="event.h" />
+    <ClInclude Include="eventManager.h" />
     <ClInclude Include="fileSystem.h" />
     <ClInclude Include="id.h" />
     <ClInclude Include="inputManager.h" />
@@ -187,6 +189,7 @@
     <ClCompile Include="controllerComponent.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="entity.cpp" />
+    <ClCompile Include="eventManager.cpp" />
     <ClCompile Include="fileSystem.cpp" />
     <ClCompile Include="id.cpp" />
     <ClCompile Include="inputManager.cpp" />

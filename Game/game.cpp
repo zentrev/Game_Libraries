@@ -23,7 +23,7 @@ bool Game::Initalize()
 		m_scene->AddEntity(ship);
 	}
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 50; i++)
 	{
 		Enemy* enemy = new Enemy(m_scene);
 		float x = Math::GetRandomRange(0.0f, 800.0f);
@@ -45,12 +45,11 @@ void Game::Update()
 {
 	m_running = !m_engine->IsQuit();
 	m_engine->Update();
-	m_scene->Update();
 
-
-	Renderer::Instance()->BeginFrame();
 	Renderer::Instance()->SetColor(Color::black);
+	Renderer::Instance()->BeginFrame();
 
+	m_scene->Update();
 	m_scene->Draw();
 
 	Renderer::Instance()->EndFrame();

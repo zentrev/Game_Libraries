@@ -1,6 +1,3 @@
-﻿  spriteComponent.cpp
-  aabbComponent.cpp
-  Generating Code...
-     Creating library C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.lib and object C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.exp
+﻿  renderer.cpp
   Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.dll
   Engine.vcxproj -> C:\Users\C.T.Raines.III\source\repos\NCGame\x64\Debug\Engine.pdb (Partial PDB)
