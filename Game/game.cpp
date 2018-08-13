@@ -26,7 +26,7 @@ bool Game::Initalize()
 	//spriteComponent->SetDepth(100);
 	//m_scene->AddEntity(entity);
 
-	Entity* explosion = new Entity(m_scene);
+	/*Entity* explosion = new Entity(m_scene);
 	explosion->GetTransform().position = Vector2D(400.0f, 300.0f);
 	explosion->GetTransform().scale = Vector2D(2.0f, 2.0f);
 	SpriteComponent* spriteComponent = explosion->AddComponent<SpriteComponent>();
@@ -34,7 +34,7 @@ bool Game::Initalize()
 	AnimationComponent* animationComponent = explosion->AddComponent<AnimationComponent>();
 	std::vector<std::string> textureNames = {"ship-explosion01.png", "ship-explosion02.png", "ship-explosion03.png", "ship-explosion04.png" };
 	animationComponent->Create(textureNames, 1.0f / 10.0f);
-	m_scene->AddEntity(explosion);
+	m_scene->AddEntity(explosion);*/
 
 	Entity* entity = new Entity(m_scene, "score");
 	entity->GetTransform().position = Vector2D(20.0f, 20.0f);

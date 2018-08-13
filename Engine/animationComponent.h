@@ -11,7 +11,7 @@ public:
 	{
 		LOOP,
 		ONE_TIME,
-		ONE_TIME_DESTORY,
+		ONE_TIME_DESTROY,
 		BOUNCY_CASTLE
 	};
 public:
@@ -29,5 +29,5 @@ protected:
 	float m_rate = 0.0f;
 	float m_timer = 0.0f;
 	int m_frame = 0;
-	int m_direction;
+	int m_direction = 1;
 };

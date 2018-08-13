@@ -46,7 +46,7 @@ void AnimationComponent::Update()
 			case ePlayback::ONE_TIME:
 				m_frame = (int)m_textures.size() - 1;
 				break;
-			case ePlayback::ONE_TIME_DESTORY:
+			case ePlayback::ONE_TIME_DESTROY:
 				m_frame = m_textures.size() - 1;
 				m_owner->SetState(Entity::DESTROY);
 				break;

@@ -1,6 +1,7 @@
 #pragma once
 #include "engine.h"
 #include "id.h"
+#include "assert.h"
 #include <list>
 #include <vector>
 
@@ -18,12 +19,12 @@ public:
 	void Draw();
 
 	template <typename T>
-	T* AddEntity()
+	T* AddEntity(const ID& id = ID())
 	{
-		T* entity = new T(this);
+		T* entity = new T(this, id);
 		assert(dynamic_cast<Entity*>(entity));
 
-		m_entity.push_back(entity);
+		m_entities.push_back(entity);
 
 		return entity;
 	}

@@ -4,6 +4,7 @@
 #include "spriteComponent.h"
 #include "aabbComponent.h"
 #include "renderer.h"
+#include "explosion.h"
 
 void Ship::Create(const Vector2D & position)
 {
@@ -43,6 +44,8 @@ void Ship::OnEvent(const Event & event)
 
 		if (event.sender->GetTag() == "enemymissile")
 		{
+			Explosion* explosion = m_scene->AddEntity<Explosion>();
+			explosion->Create(m_transform.position);
 			SetState(Entity::DESTROY);
 		}
 	}
