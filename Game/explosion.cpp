@@ -17,7 +17,7 @@ void Explosion::Create(const Vector2D& position)
 
 	//AnimationComponent* animationComponent = AddComponent<AnimationComponent>();
 	std::vector<std::string> textureNames{ "enemy-explosion01.png", "enemy-explosion02.png" , "enemy-explosion03.png" , "enemy-explosion04.png", "enemy-explosion05.png" };
-	//animationComponent->Create(textureNames, 10.f / 10.0f);
+	//animationComponent->Create(textureNames, 10.f / 10.0f, AnimationComponent::ePlaybakc::ONE_TIME_DESTROY);
 
 	AudioSystem::Instance()->AddSound("explosion", "enemy-hit01.wav");
 	AudioSystem::Instance()->PlaySound("explosion");

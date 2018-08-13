@@ -27,11 +27,11 @@ bool Texture::Create(const std::string& textureName)
 
 void Texture::Destroy()
 {
-	if (m_sdlTexture)
+	/*if (m_sdlTexture)
 	{
 		SDL_DestroyTexture(m_sdlTexture);
 		m_sdlTexture = nullptr;
-	}
+	}*/
 }
 
 void Texture::Draw(const Vector2D & position, const Vector2D & origin, const Vector2D & scale, float angle)
