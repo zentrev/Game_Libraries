@@ -1,22 +1,21 @@
 #include "renderer.h"
 #include "texture.h"
+#include <SDL_image.h>
 
 bool Renderer::Initialize(Engine * engine)
 {
 	m_engine = engine;
-	m_renderer = SDL_CreateRenderer(engine->GetWindow(), -1, 0);
-	IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
-	return true;
-}
+	m_renderer = SDL_CreateRenderer(m_engine->GetWindow(), -1, SDL_RENDERER_PRESENTVSYNC);
 
-void Renderer::Update()
-{
+	IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
+
+	return true;
 }
 
 void Renderer::Shutdown()
 {
-	SDL_DestroyRenderer(m_renderer);
 	IMG_Quit();
+	SDL_DestroyRenderer(m_renderer);
 }
 
 void Renderer::BeginFrame()
@@ -42,7 +41,7 @@ void Renderer::DrawTexture(SDL_Texture * texture, const Vector2D & position, flo
 	SDL_RenderCopyEx(m_renderer, texture, nullptr, &dest, angle, nullptr, SDL_FLIP_NONE);
 }
 
-void Renderer::DrawTexture(SDL_Texture * texture, const Vector2D & position, const Vector2D & scale, float angle)
+void Renderer::DrawTexture(SDL_Texture* texture, const Vector2D& position, const Vector2D& scale, float angle)
 {
 	SDL_Point point = position;
 	SDL_Rect dest = { point.x, point.y, 0, 0 };
@@ -50,7 +49,7 @@ void Renderer::DrawTexture(SDL_Texture * texture, const Vector2D & position, con
 	Vector2D size(dest.w, dest.h);
 	size = size * scale;
 	dest.w = static_cast<int>(size.x);
-	dest.h = static_cast<int>(size.x);
+	dest.h = static_cast<int>(size.y);
 
 	SDL_RenderCopyEx(m_renderer, texture, nullptr, &dest, angle, nullptr, SDL_FLIP_NONE);
 }
@@ -74,8 +73,7 @@ void Renderer::DebugDrawLine(const Vector2D & start, const Vector2D & end, const
 Vector2D Renderer::GetSize()
 {
 	SDL_Point size;
-
 	SDL_GetRendererOutputSize(m_renderer, &size.x, &size.y);
-
+	
 	return size;
 }

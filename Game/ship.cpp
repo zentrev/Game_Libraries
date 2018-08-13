@@ -1,47 +1,44 @@
 #include "ship.h"
-#include "shipControllerComponent.h"
 #include "kinematicComponent.h"
+#include "shipControllerComponent.h"
 #include "spriteComponent.h"
-#include "renderer.h"
 #include "aabbComponent.h"
+#include "renderer.h"
 
-void Ship::Create(const Vector2D& position)
+void Ship::Create(const Vector2D & position)
 {
+	SetTag("player");
 	m_transform.position = position;
 	m_transform.scale = Vector2D(2.0f, 2.0f);
 
-	SetTag("player");
-
 	KinematicComponent* kinematic = AddComponent<KinematicComponent>();
-	kinematic->Create(1600.0f, 0.1f);
+	kinematic->Create(500.0f, 0.3f);
+
+	ShipControllerComponent* shipController = AddComponent<ShipControllerComponent>();
+	shipController->Create(600.0f);
 
 	SpriteComponent* spriteComponent = AddComponent<SpriteComponent>();
-	spriteComponent->Create("ship.png", Vector2D(0.5f, 0.5f));
-
-	ShipControllerComponent* shipControllerComponent = AddComponent<ShipControllerComponent>();
-	shipControllerComponent->Create(650);
+	spriteComponent->Create("ship.png", Vector2D(0.5f, 1.0f));
 
 	AABBComponent* aabbComponent = AddComponent<AABBComponent>();
-	aabbComponent->Create(Vector2D(0.7f, 0.7f));
+	aabbComponent->Create();
 }
 
 void Ship::Update()
 {
 	Entity::Update();
+
 	Vector2D size = Renderer::Instance()->GetSize();
 	m_transform.position.x = Math::Clamp(m_transform.position.x, 0.0f, size.x);
-	
-	
-	//m_transform.scale = size;
 }
 
-void Ship::OnEvent(const Event& event)
+void Ship::OnEvent(const Event & event)
 {
 	if (event.eventID == "collision")
 	{
 		if (event.sender->GetTag() == "enemy")
 		{
-			SetState(Entity::DESTORY);
+			SetState(Entity::DESTROY);
 		}
 	}
 }

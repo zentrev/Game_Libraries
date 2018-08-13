@@ -7,7 +7,7 @@ ID::ID()
 	m_id = GetUniqueID();
 }
 
-std::string ID::GetUniqueID()
+std::string  ID::GetUniqueID()
 {
-	return "uID" + std::to_string(ms_uniqueID++);
+	return "uid" + std::to_string(ms_uniqueID++);
 }

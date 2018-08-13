@@ -16,6 +16,7 @@ public:
 
 	void ApplyForce(const Vector2D& force, eForceType forceType);
 	void EnableGravity(bool enableGravity = true) { m_enableGravity = enableGravity; }
+
 protected:
 	bool m_enableGravity = false;
 	float m_dampening = 1.0f;

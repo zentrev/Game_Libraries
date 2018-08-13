@@ -5,54 +5,38 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
+    <Filter Include="Math">
+      <UniqueIdentifier>{116036bf-8f18-42bc-b6ed-c9877ea78d22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{d524fce9-3d82-4518-b9f1-9480efdfe4e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Math">
-      <UniqueIdentifier>{4e0473a1-a897-495b-8688-ec1522ea8a3b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logic">
-      <UniqueIdentifier>{115f6d74-d57d-41ed-a580-89e269228155}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logic\Input">
-      <UniqueIdentifier>{8e7b74ff-99a4-4de0-8250-9a1a41d96472}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Objects">
-      <UniqueIdentifier>{64c0a3d4-8439-4816-b393-fd37ef5d92ac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Systems">
-      <UniqueIdentifier>{d0de0685-9da2-4e50-96cb-026d61122907}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Systems\Graphics">
-      <UniqueIdentifier>{4d8e8a6a-a867-490b-9faa-000b9904c00f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Systems\Graphics\Text">
-      <UniqueIdentifier>{de3bd7de-d293-4ca6-9e38-5847a33fbf37}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Systems\Audio">
-      <UniqueIdentifier>{67078a00-5da7-4d09-b91b-88b5450b60af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Physics">
-      <UniqueIdentifier>{4e0c2e26-5605-4e7d-890e-8c3ff70daa14}</UniqueIdentifier>
+      <UniqueIdentifier>{4abdc44a-808e-4e7b-97ac-d5a4d00f0ad6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Components">
-      <UniqueIdentifier>{06f753c0-fbbb-493c-a280-231ab068a599}</UniqueIdentifier>
+      <UniqueIdentifier>{e6850ccd-26b4-4a04-8698-a2f2529e524c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{dd445eb4-e4da-4a72-bae2-cfb3cc38cdc7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Event">
-      <UniqueIdentifier>{fa3d9378-b774-4695-b788-e67cc965b6d6}</UniqueIdentifier>
+      <UniqueIdentifier>{c2641663-cbe7-4e44-ba57-28f2da964667}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="renderer.h">
-      <Filter>Systems\Graphics</Filter>
+    <ClInclude Include="singleton.h">
+      <Filter>Systems</Filter>
     </ClInclude>
-    <ClInclude Include="textureManager.h">
-      <Filter>Systems\Graphics</Filter>
+    <ClInclude Include="inputManager.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="audioSystem.h">
+      <Filter>Systems</Filter>
     </ClInclude>
     <ClInclude Include="matrix22.h">
       <Filter>Math</Filter>
@@ -67,28 +51,28 @@
       <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="color.h">
-      <Filter>Systems\Graphics</Filter>
+      <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="text.h">
-      <Filter>Systems\Graphics\Text</Filter>
+    <ClInclude Include="textureManager.h">
+      <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="textManager.h">
-      <Filter>Systems\Graphics\Text</Filter>
-    </ClInclude>
-    <ClInclude Include="engine.h">
-      <Filter>Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="singleton.h">
-      <Filter>Logic</Filter>
+    <ClInclude Include="renderer.h">
+      <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="timer.h">
-      <Filter>Logic</Filter>
+      <Filter>Systems</Filter>
     </ClInclude>
-    <ClInclude Include="audioSystem.h">
-      <Filter>Systems\Audio</Filter>
+    <ClInclude Include="engine.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="inputManager.h">
-      <Filter>Logic\Input</Filter>
+    <ClInclude Include="textManager.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="text.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="audio.h">
+      <Filter>Systems</Filter>
     </ClInclude>
     <ClInclude Include="_math.h">
       <Filter>Math</Filter>
@@ -112,7 +96,7 @@
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="texture.h">
-      <Filter>Systems\Graphics</Filter>
+      <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="controllerComponent.h">
       <Filter>Components</Filter>
@@ -150,16 +134,19 @@
     <ClInclude Include="eventManager.h">
       <Filter>Event</Filter>
     </ClInclude>
+    <ClInclude Include="textComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="eventReceiver.h">
+      <Filter>Event</Filter>
+    </ClInclude>
     <ClInclude Include="animationComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="textureManager.cpp">
-      <Filter>Systems\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="renderer.cpp">
-      <Filter>Systems\Graphics</Filter>
+    <ClCompile Include="engine.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="matrix22.cpp">
       <Filter>Math</Filter>
@@ -174,25 +161,31 @@
       <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="color.cpp">
-      <Filter>Systems\Graphics</Filter>
+      <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="text.cpp">
-      <Filter>Systems\Graphics\Text</Filter>
+    <ClCompile Include="renderer.cpp">
+      <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="textManager.cpp">
-      <Filter>Systems\Graphics\Text</Filter>
-    </ClCompile>
-    <ClCompile Include="engine.cpp">
-      <Filter>Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="timer.cpp">
-      <Filter>Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="audioSystem.cpp">
-      <Filter>Systems\Audio</Filter>
+    <ClCompile Include="textureManager.cpp">
+      <Filter>Graphics</Filter>
     </ClCompile>
     <ClCompile Include="inputManager.cpp">
-      <Filter>Logic\Input</Filter>
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="audioSystem.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="textManager.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="text.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="audio.cpp">
+      <Filter>Systems</Filter>
     </ClCompile>
     <ClCompile Include="_math.cpp">
       <Filter>Math</Filter>
@@ -206,17 +199,20 @@
     <ClCompile Include="entity.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="component.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
     <ClCompile Include="spriteComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="texture.cpp">
-      <Filter>Systems\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="controllerComponent.cpp">
-      <Filter>Components</Filter>
+      <Filter>Graphics</Filter>
     </ClCompile>
     <ClCompile Include="scene.cpp">
       <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="controllerComponent.cpp">
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="kinematicComponent.cpp">
       <Filter>Components</Filter>
@@ -238,6 +234,9 @@
     </ClCompile>
     <ClCompile Include="eventManager.cpp">
       <Filter>Event</Filter>
+    </ClCompile>
+    <ClCompile Include="textComponent.cpp">
+      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="animationComponent.cpp">
       <Filter>Components</Filter>

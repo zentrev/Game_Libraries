@@ -12,6 +12,4 @@ public:
 	void Update();
 
 	void OnEvent(const Event& event);
-
 };
-
