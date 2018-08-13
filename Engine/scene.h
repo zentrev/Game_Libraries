@@ -17,6 +17,17 @@ public:
 	void Update();
 	void Draw();
 
+	template <typename T>
+	T* AddEntity()
+	{
+		T* entity = new T(this);
+		assert(dynamic_cast<Entity*>(entity));
+
+		m_entity.push_back(entity);
+
+		return entity;
+	}
+
 	void AddEntity(Entity* entity);
 	std::list<Entity*>::iterator RemoveEntity(Entity* entity, bool destroy = true);
 

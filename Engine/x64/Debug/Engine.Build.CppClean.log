@@ -1,91 +1,46 @@
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\vc141.pdb
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\vc141.idb
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\id.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\inputmanager.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\kinematiccomponent.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\object.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\physics.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\scene.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\spritecomponent.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\textcomponent.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\texture.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\transform.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\_math.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\matrix22.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\matrix33.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\renderer.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\text.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\textmanager.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\texturemanager.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\timer.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\vector2d.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\vector3d.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\aabb.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\aabbcomponent.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\audio.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\audiosystem.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\color.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\component.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\controllercomponent.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\engine.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\entity.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\eventmanager.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\filesystem.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\engine\x64\debug\animationcomponent.obj
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\x64\debug\engine.lib
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\x64\debug\engine.exp
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\x64\debug\engine.dll
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\x64\debug\engine.ilk
-c:\users\rmaple\onedrive - neumont college of computer science\dev\gat160\ncgame\x64\debug\engine.pdb
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\aabb.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\aabbcomponent.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\animationcomponent.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\audio.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\audiosystem.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\color.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\component.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\controllercomponent.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\entity.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\eventmanager.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\filesystem.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\id.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\inputmanager.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\kinematiccomponent.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\matrix22.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\matrix33.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\object.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\physics.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\renderer.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\scene.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\spritecomponent.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\text.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\textcomponent.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\textmanager.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\texture.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\texturemanager.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\timer.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\transform.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\vector2d.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\vector3d.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\_math.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\vc141.idb
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\vc141.pdb
-c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.pdb
-c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.dll
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\vc141.idb
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\textcomponent.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\spritecomponent.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\scene.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\physics.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\object.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\kinematiccomponent.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\inputmanager.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\id.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\filesystem.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\eventmanager.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\entity.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\controllercomponent.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\component.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\color.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\audiosystem.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\audio.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\animationcomponent.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\aabbcomponent.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\aabb.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\vector3d.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\vector2d.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\timer.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\texturemanager.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\textmanager.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\text.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\renderer.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\matrix33.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\matrix22.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\_math.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\transform.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\texture.obj
+c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.lib
+c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.exp
 c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.ilk
+c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.dll
+c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.pdb
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\cl.command.1.tlog
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\cl.read.1.tlog
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\cl.write.1.tlog
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\engine.write.1u.tlog
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.15348.delete.1.tlog
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.17796.delete.1.tlog
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.21008.delete.1.tlog
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.29124.delete.1.tlog
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.30684.delete.1.tlog
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.30908.delete.1.tlog
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.33300.delete.1.tlog
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.33728.delete.1.tlog
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.command.1.tlog
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.read.1.tlog
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.write.1.tlog

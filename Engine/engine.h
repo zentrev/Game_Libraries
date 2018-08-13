@@ -11,8 +11,8 @@
 
 #pragma warning(disable:4251)
 
-#include <sdl.h>
-#include <sdl_ttf.h>
+#include "sdl.h"
+#include <SDL_ttf.h>
 
 class ENGINE_API Engine
 {

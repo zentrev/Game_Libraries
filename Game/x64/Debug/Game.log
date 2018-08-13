@@ -1,15 +1,6 @@
 ﻿  enemy.cpp
-c:\users\craines\documents\c++\gamel\ncgame\engine\engine.h(14): fatal error C1083: Cannot open include file: 'sdl.h': No such file or directory
-  enemyControllerComponent.cpp
-c:\users\craines\documents\c++\gamel\ncgame\engine\engine.h(14): fatal error C1083: Cannot open include file: 'sdl.h': No such file or directory
-  game.cpp
-c:\users\craines\documents\c++\gamel\ncgame\engine\engine.h(14): fatal error C1083: Cannot open include file: 'sdl.h': No such file or directory
-  main.cpp
-c:\users\craines\documents\c++\gamel\ncgame\engine\engine.h(14): fatal error C1083: Cannot open include file: 'sdl.h': No such file or directory
+  explosion.cpp
   missile.cpp
-c:\users\craines\documents\c++\gamel\ncgame\engine\engine.h(14): fatal error C1083: Cannot open include file: 'sdl.h': No such file or directory
   ship.cpp
-c:\users\craines\documents\c++\gamel\ncgame\engine\engine.h(14): fatal error C1083: Cannot open include file: 'sdl.h': No such file or directory
-  shipControllerComponent.cpp
-c:\users\craines\documents\c++\gamel\ncgame\engine\engine.h(14): fatal error C1083: Cannot open include file: 'sdl.h': No such file or directory
   Generating Code...
+  Game.vcxproj -> C:\Users\CRaines\Documents\C++\GameL\NCGame\x64\Debug\Game.exe
