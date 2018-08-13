@@ -1,12 +1,13 @@
 #include "timer.h"
 
-
 bool Timer::Initialize(Engine * engine)
 {
-	m_engine = engine;
-	m_timeSacle = 1;
+	m_timeScale = 1.0f;
 	m_paused = false;
-	return false;
+	m_startTicks = SDL_GetTicks();
+	m_frameCounter = 0;
+
+	return true;
 }
 
 void Timer::Shutdown()
@@ -19,6 +20,13 @@ void Timer::Update()
 	Uint32 milliseconds = ticks - m_prevTicks;
 	m_prevTicks = ticks;
 
+	m_frameCounter++;
+	if (m_frameCounter == FRAME_COUNT)
+	{
+		m_fps = FRAME_COUNT / (1000.0f / (SDL_GetTicks() - m_startTicks));
+		m_frameCounter = 0;
+		m_startTicks = SDL_GetTicks();
+	}
+	
 	m_dt = (m_paused) ? 0.0f : milliseconds / 1000.0f;
-
 }

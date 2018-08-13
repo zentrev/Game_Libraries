@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{2F93973F-0A89-4FC1-AD02-0399CD11F078}</ProjectGuid>
+    <ProjectGuid>{8EFFE27C-995E-40B7-B7F4-8A3C9DE39D6D}</ProjectGuid>
     <RootNamespace>Engine</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -69,34 +69,19 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod_vc.lib;</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86</AdditionalLibraryDirectories>
-      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sdl2.lib;sdl2main.lib;sdl2_ttf.lib;sdl2_image.lib;fmod_vc.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -104,13 +89,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod64_vc.lib;</AdditionalDependencies>
-      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sdl2.lib;sdl2main.lib;sdl2_ttf.lib;sdl2_image.lib;fmod64_vc.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -120,13 +105,15 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod_vc.lib;</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sdl2.lib;sdl2main.lib;sdl2_ttf.lib;sdl2_image.lib;fmod_vc.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -136,19 +123,22 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod64_vc.lib;</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sdl2.lib;sdl2main.lib;sdl2_ttf.lib;sdl2_image.lib;fmod64_vc.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="aabb.h" />
     <ClInclude Include="aabbComponent.h" />
     <ClInclude Include="animationComponent.h" />
+    <ClInclude Include="audio.h" />
     <ClInclude Include="audioSystem.h" />
     <ClInclude Include="collisionComponent.h" />
     <ClInclude Include="color.h" />
@@ -158,6 +148,7 @@
     <ClInclude Include="entity.h" />
     <ClInclude Include="event.h" />
     <ClInclude Include="eventManager.h" />
+    <ClInclude Include="eventReceiver.h" />
     <ClInclude Include="fileSystem.h" />
     <ClInclude Include="id.h" />
     <ClInclude Include="inputManager.h" />
@@ -168,6 +159,7 @@
     <ClInclude Include="renderComponent.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="spriteComponent.h" />
+    <ClInclude Include="textComponent.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="transform.h" />
     <ClInclude Include="_math.h" />
@@ -186,8 +178,10 @@
     <ClCompile Include="aabb.cpp" />
     <ClCompile Include="aabbComponent.cpp" />
     <ClCompile Include="animationComponent.cpp" />
+    <ClCompile Include="audio.cpp" />
     <ClCompile Include="audioSystem.cpp" />
     <ClCompile Include="color.cpp" />
+    <ClCompile Include="component.cpp" />
     <ClCompile Include="controllerComponent.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="entity.cpp" />
@@ -200,6 +194,7 @@
     <ClCompile Include="physics.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="spriteComponent.cpp" />
+    <ClCompile Include="textComponent.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="transform.cpp" />
     <ClCompile Include="_math.cpp" />

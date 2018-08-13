@@ -1,33 +1,34 @@
 #include "enemy.h"
-#include "enemyControllerComponent.h"
 #include "kinematicComponent.h"
 #include "spriteComponent.h"
-#include "renderer.h"
+#include "enemyControllerComponent.h"
 #include "aabbComponent.h"
-#include "explosion.h"
+#include "renderer.h"
+#include "audioSystem.h"
+#include "eventManager.h"
 
-void Enemy::Create(const Vector2D& position)
+void Enemy::Create(const Vector2D & position)
 {
+	SetTag("enemy");
 	m_transform.position = position;
 	m_transform.scale = Vector2D(2.0f, 2.0f);
 
-	SetTag("enemy");
-
 	KinematicComponent* kinematic = AddComponent<KinematicComponent>();
-	kinematic->Create(1600.0f, 0.3f);
+	kinematic->Create(500.0f, 0.3f);
+
+	EnemyControllerComponent* controller = AddComponent<EnemyControllerComponent>();
+	controller->Create(200.0f);
 
 	SpriteComponent* spriteComponent = AddComponent<SpriteComponent>();
-	spriteComponent->Create("enemy01a.png", Vector2D(0.5f, 0.5f));
-
-	EnemyControllerComponent* enemyControllerComponent = AddComponent<EnemyControllerComponent>();
-	enemyControllerComponent->Create(250);
+	spriteComponent->Create("enemy01A.png", Vector2D(0.5f, 0.5f));
 
 	AABBComponent* aabbComponent = AddComponent<AABBComponent>();
-	aabbComponent->Create(Vector2D(0.7f, 0.7f));
+	aabbComponent->Create();
+
+	AudioSystem::Instance()->AddSound("explosion", "enemy-hit01.wav");
 }
 
-void Enemy::
-Update()
+void Enemy::Update()
 {
 	Entity::Update();
 
@@ -38,26 +39,24 @@ Update()
 		float y = -100.0f;
 		m_transform.position = Vector2D(x, y);
 	}
-	//m_transform.position.x = Math::Clamp(m_transform.position.x, 0.0f, size.x);
-	//m_transform.position.y = Math::Clamp(m_transform.position.y, 0.0f, size.y);
-
 }
 
-void Enemy::OnEvent(const Event& event)
+void Enemy::OnEvent(const Event & event)
 {
 	if (event.eventID == "collision")
 	{
 		if (event.sender->GetTag() == "playermissile")
 		{
-			Explosion* explosion = m_scene->AddEntity<Explosion>();
-			explosion->Create(m_transform.position);
+ 			Event _event;
+			_event.eventID = "add_score";
+			EventManager::Instance()->SendGameMessage(_event);
 
-			SetState(Entity::DESTORY);
+			AudioSystem::Instance()->PlaySound("explosion");
+			SetState(Entity::DESTROY);
 		}
 		if (event.sender->GetTag() == "player")
 		{
-			SetState(Entity::DESTORY);
+			SetState(Entity::DESTROY);
 		}
 	}
 }
-

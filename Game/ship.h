@@ -11,7 +11,5 @@ public:
 	void Create(const Vector2D& position);
 	void Update();
 
-	void Ship::OnEvent(const Event& event);
-
+	void OnEvent(const Event& event);
 };
-

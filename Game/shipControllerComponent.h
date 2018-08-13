@@ -11,5 +11,5 @@ public:
 	void Update();
 
 protected:
-	float m_speed;
+	float m_speed = 0.0f;
 };

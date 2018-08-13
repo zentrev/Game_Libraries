@@ -7,7 +7,7 @@ class ENGINE_API AABBComponent : public ICollisionComponent
 public:
 	AABBComponent(Entity* owner) : ICollisionComponent(owner) {}
 
-	void Create(const Vector2D& offset = 1);
+	void Create();
 	void Destroy();
 	void Update();
 
@@ -15,5 +15,4 @@ public:
 
 protected:
 	AABB m_aabb;
-	Vector2D m_offset;
 };

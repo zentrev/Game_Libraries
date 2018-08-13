@@ -1,14 +1,15 @@
 #include "entity.h"
-#include <assert.h>
 #include "renderComponent.h"
+#include <assert.h>
 
-void Entity::Destory()
+void Entity::Destroy()
 {
 	for (Component* component : m_components)
 	{
 		component->Destroy();
 		delete component;
 	}
+
 	m_components.clear();
 }
 
@@ -33,7 +34,7 @@ void Entity::OnEvent(const Event & event)
 {
 }
 
-void Entity::AddComponent(Component * component)
+void Entity::AddComponent(Component* component)
 {
 	assert(component);
 	assert(std::find(m_components.begin(), m_components.end(), component) == m_components.end());
@@ -41,7 +42,7 @@ void Entity::AddComponent(Component * component)
 	m_components.push_back(component);
 }
 
-void Entity::RemoveComponent(Component * component)
+void Entity::RemoveComponent(Component* component)
 {
 	assert(std::find(m_components.begin(), m_components.end(), component) != m_components.end());
 

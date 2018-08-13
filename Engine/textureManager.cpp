@@ -2,7 +2,7 @@
 #include "renderer.h"
 #include "fileSystem.h"
 #include <cassert>
-
+#include <SDL_image.h>
 
 bool TextureManager::Initialize(Engine * engine)
 {
@@ -24,7 +24,7 @@ SDL_Texture * TextureManager::GetTexture(const std::string & textureName)
 
 	if (texture == nullptr)
 	{
-		std::string filename = FileSystem::Instance()->GetPathName() + textureName;
+		std::string filename = FileSystem::Instance()->GetPathname() + textureName;
 		SDL_Surface* surface = IMG_Load(filename.c_str());
 		assert(surface);
 		texture = SDL_CreateTextureFromSurface(Renderer::Instance()->GetRenderer(), surface);

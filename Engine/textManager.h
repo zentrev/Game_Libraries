@@ -1,10 +1,14 @@
 #pragma once
+
 #include "engine.h"
 #include "singleton.h"
+#include "color.h"
+#include "vector2D.h"
 #include "text.h"
-#include<vector>
+#include <string>
+#include <vector>
 
-class TextManager : public Singleton<TextManager>
+class ENGINE_API TextManager : public Singleton<TextManager>
 {
 public:
 	bool Initialize(Engine* engine);
@@ -16,10 +20,9 @@ public:
 	friend Singleton<TextManager>;
 
 protected:
-	TextManager() {};
-	~TextManager() {};
+	TextManager() {}
+
 private:
 	Engine * m_engine;
 	std::vector<Text*> m_texts;
 };
-
