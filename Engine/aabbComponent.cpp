@@ -5,8 +5,9 @@
 #include "spriteComponent.h"
 #include "texture.h"
 
-void AABBComponent::Create()
+void AABBComponent::Create(const Vector2D& offset)
 {
+	m_offset = offset;
 }
 
 void AABBComponent::Destroy()
@@ -17,7 +18,7 @@ void AABBComponent::Update()
 {
 	Transform transform = m_owner->GetTransform();
 	Vector2D position = transform.position;
-	Vector2D size = transform.scale;
+	Vector2D size = transform.scale * m_offset;
 
 	SpriteComponent* spriteComponent = m_owner->GetComponent<SpriteComponent>();
 	if (spriteComponent)
@@ -27,7 +28,9 @@ void AABBComponent::Update()
 	}
 
 	m_aabb.Build(position, size * 0.5f);
+#ifdef _DEBUG
 	m_aabb.Draw(Color::red);
+#endif //_DEBUG
 }
 
 bool AABBComponent::Intersects(ICollisionComponent * other)

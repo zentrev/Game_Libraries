@@ -150,6 +150,9 @@
     <ClInclude Include="eventManager.h">
       <Filter>Event</Filter>
     </ClInclude>
+    <ClInclude Include="animationComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="textureManager.cpp">
@@ -235,6 +238,9 @@
     </ClCompile>
     <ClCompile Include="eventManager.cpp">
       <Filter>Event</Filter>
+    </ClCompile>
+    <ClCompile Include="animationComponent.cpp">
+      <Filter>Components</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

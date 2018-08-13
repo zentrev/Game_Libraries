@@ -21,7 +21,7 @@ void Missile::Create(const Vector2D& position, const Vector2D& direction, float 
 	spriteComponent->Create("missile01.png", Vector2D(0.5f, 0.5f));
 
 	AABBComponent* aabbComponent = AddComponent<AABBComponent>();
-	aabbComponent->Create();
+	aabbComponent->Create(Vector2D(0.5f, 0.5f));
 }
 
 void Missile::Update()

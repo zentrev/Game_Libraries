@@ -22,7 +22,7 @@ void Ship::Create(const Vector2D& position)
 	shipControllerComponent->Create(650);
 
 	AABBComponent* aabbComponent = AddComponent<AABBComponent>();
-	aabbComponent->Create();
+	aabbComponent->Create(Vector2D(0.7f, 0.7f));
 }
 
 void Ship::Update()

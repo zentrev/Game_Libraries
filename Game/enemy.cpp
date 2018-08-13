@@ -4,6 +4,7 @@
 #include "spriteComponent.h"
 #include "renderer.h"
 #include "aabbComponent.h"
+#include "explosion.h"
 
 void Enemy::Create(const Vector2D& position)
 {
@@ -22,7 +23,7 @@ void Enemy::Create(const Vector2D& position)
 	enemyControllerComponent->Create(250);
 
 	AABBComponent* aabbComponent = AddComponent<AABBComponent>();
-	aabbComponent->Create();
+	aabbComponent->Create(Vector2D(0.7f, 0.7f));
 }
 
 void Enemy::
@@ -48,6 +49,9 @@ void Enemy::OnEvent(const Event& event)
 	{
 		if (event.sender->GetTag() == "playermissile")
 		{
+			Explosion* explosion = m_scene->AddEntity<Explosion>();
+			explosion->Create(m_transform.position);
+
 			SetState(Entity::DESTORY);
 		}
 		if (event.sender->GetTag() == "player")
