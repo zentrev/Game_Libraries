@@ -7,14 +7,13 @@ class ENGINE_API FileSystem : public Singleton<FileSystem>
 {
 public:
 	bool Initialize(Engine* engine);
-	void ShutDown();
+	void Shutdown();
 	void Update();
 
-	void SetPathName(const std::string& pathName) { m_pathName = pathName; }
-	const std::string& GetPathName() { return m_pathName; }
+	void SetPathname(const std::string& pathname) { m_pathname = pathname; }
+	const std::string& GetPathname() { return m_pathname; }
 
 protected:
 	Engine* m_engine;
-	std::string m_pathName;
-
+	std::string m_pathname;
 };

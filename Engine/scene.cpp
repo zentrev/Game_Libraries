@@ -1,38 +1,38 @@
 #include "scene.h"
 #include "entity.h"
+#include "assert.h"
 #include "collisionComponent.h"
+#include "renderComponent.h"
 #include "eventManager.h"
-#include "event.h"
-#include <assert.h>
-#include <vector>
+#include <algorithm>
 
 bool Scene::Initialize()
 {
-	return false;
+	return true;
 }
 
 void Scene::Shutdown()
 {
-	for (Entity* entity : m_entites)
+	for (Entity* entity : m_entities)
 	{
 		delete entity;
 	}
-	m_entites.clear();
+	m_entities.clear();
 }
 
 void Scene::Update()
 {
-	size_t size = m_entites.size();
-	for (Entity* entity : m_entites)
+	for (Entity* entity : m_entities)
 	{
 		entity->Update();
 	}
 
+	// update collision
 	std::vector<ICollisionComponent*> collisionComponents;
-	for (Entity* entity : m_entites)
+	for (Entity* entity : m_entities)
 	{
-		ICollisionComponent* collisionComponent =entity->GetComponent<ICollisionComponent>();
-		if(collisionComponent)
+		ICollisionComponent* collisionComponent = entity->GetComponent<ICollisionComponent>();
+		if (collisionComponent)
 		{
 			collisionComponents.push_back(collisionComponent);
 		}
@@ -40,29 +40,28 @@ void Scene::Update()
 
 	for (size_t i = 0; i < collisionComponents.size(); i++)
 	{
-		for (size_t j = i+1; j < collisionComponents.size(); j++)
+		for (size_t j = i + 1; j < collisionComponents.size(); j++)
 		{
 			if (collisionComponents[i]->Intersects(collisionComponents[j]))
 			{
- 				Event event;
+ 	 			Event event;
 				event.eventID = "collision";
 
-				event.reciver = collisionComponents[i]->GetOwner();
+				event.receiver = collisionComponents[i]->GetOwner();
 				event.sender = collisionComponents[j]->GetOwner();
 				EventManager::Instance()->SendMessage(event);
 
-				event.reciver = collisionComponents[j]->GetOwner();
+				event.receiver = collisionComponents[j]->GetOwner();
 				event.sender = collisionComponents[i]->GetOwner();
 				EventManager::Instance()->SendMessage(event);
 			}
 		}
-
 	}
-
-	std::list<Entity*>::iterator iter = m_entites.begin();
-	while (iter != m_entites.end())
+	
+	std::list<Entity*>::iterator iter = m_entities.begin();
+	while (iter != m_entities.end())
 	{
-		if ((*iter)->GetState() == Entity::DESTORY)
+		if ((*iter)->GetState() == Entity::DESTROY)
 		{
 			iter = RemoveEntity(*iter);
 		}
@@ -75,61 +74,81 @@ void Scene::Update()
 
 void Scene::Draw()
 {
-	for (Entity* enity : m_entites) {
-		enity->Draw();
+	std::vector<IRenderComponent*> renderComponents;
+	for (Entity* entity : m_entities)
+	{
+		IRenderComponent* renderComponent = entity->GetComponent<IRenderComponent>();
+		if (renderComponent)
+		{
+			renderComponents.push_back(renderComponent);
+		}
+	}
+
+	std::sort(renderComponents.begin(), renderComponents.end(), IRenderComponent::CompareDepth);
+
+	for (IRenderComponent* renderComponent : renderComponents)
+	{
+		if (renderComponent->IsVisible())
+		{
+			renderComponent->Draw();
+		}
 	}
 }
 
 void Scene::AddEntity(Entity * entity)
 {
-	assert(std::find(m_entites.begin(), m_entites.end(), entity) == m_entites.end());
+	assert(std::find(m_entities.begin(), m_entities.end(), entity) == m_entities.end());
 	assert(entity);
-	m_entites.push_back(entity);
+
+	m_entities.push_back(entity);
 }
 
-std::list<Entity*>::iterator Scene::RemoveEntity(Entity * entity, bool destory)
+std::list<Entity*>::iterator Scene::RemoveEntity(Entity * entity, bool destroy)
 {
-	assert(std::find(m_entites.begin(), m_entites.end(), entity) != m_entites.end());
+	assert(std::find(m_entities.begin(), m_entities.end(), entity) != m_entities.end());
 	assert(entity);
 
-	auto iter = std::find(m_entites.begin(), m_entites.end(), entity);
-	if (iter != m_entites.end())
+	auto iter = std::find(m_entities.begin(), m_entities.end(), entity);
+	if (iter != m_entities.end())
 	{
-		if (destory)
+		if (destroy)
 		{
-			 (*iter)->Destory();
+			(*iter)->Destroy();
 			delete *iter;
 		}
-		iter = m_entites.erase(iter);
+		iter = m_entities.erase(iter);
 	}
+
 	return iter;
 }
 
-Entity * Scene::GetEntityWithID(const ID & id)
+Entity* Scene::GetEntityWithID(const ID & id)
 {
 	Entity* entity = nullptr;
-	for (Entity* _enity : m_entites)
+
+	for (Entity* _entity : m_entities)
 	{
-		if (*_enity == id)
+		if (*_entity == id)
 		{
-			entity = _enity;
+			entity = _entity;
+			break;
 		}
 	}
+
 	return entity;
 }
 
-std::vector<Entity*> Scene::GetEnitiesWithTag(const ID & tag)
+std::vector<Entity*> Scene::GetEntitiesWithTag(const ID & tag)
 {
-
 	std::vector<Entity*> entities;
 
-	for (Entity* entity : m_entites)
+	for (Entity* entity : m_entities)
 	{
 		if (entity->GetTag() == tag)
 		{
 			entities.push_back(entity);
 		}
 	}
-
+	
 	return entities;
 }

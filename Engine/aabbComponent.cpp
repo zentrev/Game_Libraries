@@ -1,36 +1,34 @@
 #include "aabbComponent.h"
-#include "transform.h"
 #include "entity.h"
-#include "vector2d.h"
+#include "transform.h"
 #include "spriteComponent.h"
 #include "texture.h"
 
-void AABBComponent::Create(const Vector2D& offset)
+void AABBComponent::Create()
 {
-	m_offset = offset;
+	//
 }
 
 void AABBComponent::Destroy()
 {
+	//
 }
 
 void AABBComponent::Update()
 {
 	Transform transform = m_owner->GetTransform();
 	Vector2D position = transform.position;
-	Vector2D size = transform.scale * m_offset;
+	Vector2D size = transform.scale;
 
 	SpriteComponent* spriteComponent = m_owner->GetComponent<SpriteComponent>();
 	if (spriteComponent)
 	{
 		size = size * spriteComponent->GetTexture()->GetSize();
-		position = position + (size) * (Vector2D(0.5f, 0.5f) - spriteComponent->GetOrgin());
+		position = position + (size) * (Vector2D(0.5f, 0.5f) - spriteComponent->GetOrigin()) ;
 	}
 
 	m_aabb.Build(position, size * 0.5f);
-#ifdef _DEBUG
-	m_aabb.Draw(Color::red);
-#endif //_DEBUG
+	//m_aabb.Draw(Color::red);
 }
 
 bool AABBComponent::Intersects(ICollisionComponent * other)
@@ -42,5 +40,6 @@ bool AABBComponent::Intersects(ICollisionComponent * other)
 	{
 		intersects = m_aabb.Intersects(aabbComponent->m_aabb);
 	}
+	
 	return intersects;
 }

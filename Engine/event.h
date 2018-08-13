@@ -7,8 +7,7 @@ struct Event
 {
 	ID eventID;
 	Entity* sender;
-	Entity* reciver;
+	Entity* receiver;
 
 	Event() {}
-
 };
