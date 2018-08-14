@@ -39,6 +39,8 @@ void Ship::OnEvent(const Event & event)
 	{
 		if (event.sender->GetTag() == "enemy")
 		{
+			Explosion* explosion = m_scene->AddEntity<Explosion>();
+			explosion->Create(m_transform.position);
 			SetState(Entity::DESTROY);
 		}
 

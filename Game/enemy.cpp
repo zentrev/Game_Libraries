@@ -6,6 +6,7 @@
 #include "renderer.h"
 #include "audioSystem.h"
 #include "eventManager.h"
+#include "explosion.h"
 
 void Enemy::Create(const Vector2D & position)
 {
@@ -51,7 +52,8 @@ void Enemy::OnEvent(const Event & event)
 			_event.eventID = "add_score";
 			EventManager::Instance()->SendGameMessage(_event);
 
-			AudioSystem::Instance()->PlaySound("explosion");
+			Explosion* explosion = m_scene->AddEntity<Explosion>();
+			explosion->Create(m_transform.position);
 			SetState(Entity::DESTROY);
 		}
 		if (event.sender->GetTag() == "player")

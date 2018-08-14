@@ -1,2 +1,4 @@
-﻿  explosion.cpp
+﻿  game.cpp
+  states.cpp
+  Generating Code...
   Game.vcxproj -> C:\Users\CRaines\Documents\C++\GameL\NCGame\x64\Debug\Game.exe

@@ -27,11 +27,11 @@
     <Filter Include="Event">
       <UniqueIdentifier>{c2641663-cbe7-4e44-ba57-28f2da964667}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{2632f28c-573c-4b3e-851c-3a18ff73fecc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="singleton.h">
-      <Filter>Systems</Filter>
-    </ClInclude>
     <ClInclude Include="inputManager.h">
       <Filter>Systems</Filter>
     </ClInclude>
@@ -143,6 +143,15 @@
     <ClInclude Include="animationComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="state.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="stateMachine.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -240,6 +249,12 @@
     </ClCompile>
     <ClCompile Include="animationComponent.cpp">
       <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="state.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="stateMachine.cpp">
+      <Filter>Framework</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
