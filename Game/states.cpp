@@ -37,7 +37,7 @@ void TitleState::Exit()
 
 void GameState::Enter()
 {
-	for (size_t i = 0; i < 5; i++)
+	for (size_t i = 0; i < 25; i++)
 	{
 		Enemy* enemy = new Enemy(m_owner->GetScene());
 		float x = Math::GetRandomRange(0.0f, 800.0f);

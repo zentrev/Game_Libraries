@@ -47,5 +47,9 @@ void Missile::OnEvent(const Event & event)
 		{
 			SetState(Entity::DESTROY);
 		}
+		if (event.sender->GetTag() == "playermissile" && m_tag == "enemymissile" || event.sender->GetTag() == "enemymissile" && m_tag == "playermissile")
+		{
+			SetState(Entity::DESTROY);
+		}
 	}
 }
