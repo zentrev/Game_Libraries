@@ -9,8 +9,8 @@
 void EnemyControllerComponent::Create(float speed)
 {
 	m_speed = speed;
-	//m_fireRateMin = 1.0f;
-	//m_fireRateMax = 3.0f;
+	m_fireRateMin = 1.0f;
+	m_fireRateMax = 3.0f;
 	m_timer = Math::GetRandomRange(m_fireRateMin, m_fireRateMax);
 }
 

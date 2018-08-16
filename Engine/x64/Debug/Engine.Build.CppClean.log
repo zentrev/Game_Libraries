@@ -1,6 +1,6 @@
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\vc141.pdb
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\vc141.idb
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\textcomponent.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\state.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\spritecomponent.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\scene.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\physics.obj
@@ -30,8 +30,11 @@ c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\renderer.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\matrix33.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\matrix22.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\_math.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\waypoint.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\transform.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\texture.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\textcomponent.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\statemachine.obj
 c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.lib
 c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.exp
 c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.ilk
