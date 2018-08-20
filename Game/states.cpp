@@ -37,11 +37,11 @@ void TitleState::Exit()
 
 void GameState::Enter()
 {
-	for (size_t i = 0; i < 25; i++)
+	for (size_t i = 0; i < 1; i++)
 	{
 		Enemy* enemy = new Enemy(m_owner->GetScene());
 		float x = Math::GetRandomRange(0.0f, 800.0f);
-		float y = Math::GetRandomRange(-30.0f, -300.0f);
+		float y = Math::GetRandomRange(30.0f, 30.0f);
 		enemy->Create(Vector2D(x, y));
 		m_owner->GetScene()->AddEntity(enemy);
 	}

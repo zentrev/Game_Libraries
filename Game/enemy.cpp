@@ -21,7 +21,7 @@ void Enemy::Create(const Vector2D & position)
 	/*EnemyControllerComponent* controller = AddComponent<EnemyControllerComponent>();
 	controller->Create(200.0f);*/
 	EnemyWaypointControllerComponent* controller = AddComponent<EnemyWaypointControllerComponent>();
-	std::vector<Vector2D> points = { Vector2D(300.0f,300.0f), Vector2D(500.0f,400.0f), Vector2D(96.0f,-480.0f) };
+	std::vector<Vector2D> points = { Vector2D(300.0f,300.0f), Vector2D(300.0f,350.0f), Vector2D(200.0f,400.0f), Vector2D(400.0f,300.0f), Vector2D(300.0f,300.0f), Vector2D(300.0f,400.0f), Vector2D(400.0f,400.0f), Vector2D(400.0f,300.0f) };
 	controller->Create(200.0f, points);
 
 	SpriteComponent* spriteComponent = AddComponent<SpriteComponent>();

@@ -27,7 +27,6 @@ bool Engine::Initialize()
 	InputManager::Instance()->Initialize(this);
 	AudioSystem::Instance()->Initialize(this);
 	Physics::Instance()->Initialize(this);
-	
 	Physics::Instance()->SetGravity(Vector2D(0.0f, 400.0f));
 
 	return true;
@@ -72,4 +71,9 @@ void Engine::Update()
 	}
 
 	SDL_PumpEvents();
+
+	if (InputManager::Instance()->GetButtonState(SDL_SCANCODE_GRAVE) == InputManager::eButtonState::PRESSED)
+	{
+		m_isDebug = !m_isDebug;
+	}
 }

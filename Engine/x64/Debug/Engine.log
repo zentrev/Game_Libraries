@@ -1,44 +1,7 @@
-﻿  aabb.cpp
-  aabbComponent.cpp
-  animationComponent.cpp
-c:\users\craines\documents\c++\gamel\ncgame\engine\animationcomponent.cpp(50): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-c:\users\craines\documents\c++\gamel\ncgame\engine\animationcomponent.cpp(54): warning C4244: 'argument': conversion from 'unsigned __int64' to 'float', possible loss of data
-c:\users\craines\documents\c++\gamel\ncgame\engine\animationcomponent.cpp(54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\craines\documents\c++\gamel\ncgame\engine\animationcomponent.cpp(54): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  audio.cpp
-  audioSystem.cpp
-  color.cpp
-  component.cpp
-  controllerComponent.cpp
-  engine.cpp
+﻿  engine.cpp
   entity.cpp
-  eventManager.cpp
-  fileSystem.cpp
-  id.cpp
-  inputManager.cpp
-  kinematicComponent.cpp
-  object.cpp
-  physics.cpp
-  scene.cpp
-  spriteComponent.cpp
-  state.cpp
-  Generating Code...
-  Compiling...
-  stateMachine.cpp
-  textComponent.cpp
-  texture.cpp
-  transform.cpp
-  waypoint.cpp
   _math.cpp
-  matrix22.cpp
-  matrix33.cpp
   renderer.cpp
-  text.cpp
-  textManager.cpp
-  textureManager.cpp
-  timer.cpp
-  vector2D.cpp
-  vector3D.cpp
   Generating Code...
      Creating library C:\Users\CRaines\Documents\C++\GameL\NCGame\x64\Debug\Engine.lib and object C:\Users\CRaines\Documents\C++\GameL\NCGame\x64\Debug\Engine.exp
   Engine.vcxproj -> C:\Users\CRaines\Documents\C++\GameL\NCGame\x64\Debug\Engine.dll

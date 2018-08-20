@@ -3,7 +3,7 @@
 #include "transform.h"
 #include "spriteComponent.h"
 #include "texture.h"
-
+#include "debugDraw.h"
 
 void AABBComponent::Create(const Vector2D& offset)
 {
@@ -29,7 +29,8 @@ void AABBComponent::Update()
 
 	m_aabb.Build(position, size * 0.5f);
 #ifdef _DEBUG
-	m_aabb.Draw(Color::red);
+	DEBUG_DRAW_AABB(m_aabb, Color::red);
+	//Debug::DrawAABB(m_aabb, Color::red);
 #endif // _DEBUG
 
 }
