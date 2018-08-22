@@ -11,6 +11,7 @@ c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\filesystem.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\eventmanager.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\entity.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.obj
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\debugdraw.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\controllercomponent.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\component.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\color.obj
@@ -35,7 +36,6 @@ c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\texture.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\textcomponent.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\statemachine.obj
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\state.obj
-c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\debugdraw.obj
 c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.lib
 c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.exp
 c:\users\craines\documents\c++\gamel\ncgame\x64\debug\engine.dll
@@ -45,6 +45,8 @@ c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\cl.comm
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\cl.read.1.tlog
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\cl.write.1.tlog
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\engine.write.1u.tlog
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.14360.delete.1.tlog
+c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.6168.delete.1.tlog
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.command.1.tlog
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.read.1.tlog
 c:\users\craines\documents\c++\gamel\ncgame\engine\x64\debug\engine.tlog\link.write.1.tlog

@@ -24,7 +24,6 @@ bool Game::Initalize()
 
 	m_stateMacine->AddState("title", new TitleState(m_stateMacine));
 	m_stateMacine->AddState("game", new GameState(m_stateMacine));
-
 	m_stateMacine->SetState("title");
 
 	Entity* entity = new Entity(m_scene, "score");
@@ -38,15 +37,6 @@ bool Game::Initalize()
 	Ship* ship = new Ship(m_scene, "player");
 	ship->Create(Vector2D(400, 510));
 	m_scene->AddEntity(ship);
-
-	/*for (size_t i = 0; i < 5; i++)
-	{
-		Enemy* enemy = new Enemy(m_scene);
-		float x = Math::GetRandomRange(0.0f, 800.0f);
-		float y = Math::GetRandomRange(-30.0f, -300.0f);
-		enemy->Create(Vector2D(x, y));
-		m_scene->AddEntity(enemy);
-	}*/
 	
 	m_running = success;
 

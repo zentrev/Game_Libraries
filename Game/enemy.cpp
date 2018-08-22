@@ -8,6 +8,7 @@
 #include "eventManager.h"
 #include "explosion.h"
 #include "enemyWaypointControllerComponent.h"
+#include "enemyTargetControllerComponent.h"
 
 void Enemy::Create(const Vector2D & position)
 {
@@ -18,11 +19,12 @@ void Enemy::Create(const Vector2D & position)
 	KinematicComponent* kinematic = AddComponent<KinematicComponent>();
 	kinematic->Create(500.0f, 0.3f);
 
-	/*EnemyControllerComponent* controller = AddComponent<EnemyControllerComponent>();
-	controller->Create(200.0f);*/
-	EnemyWaypointControllerComponent* controller = AddComponent<EnemyWaypointControllerComponent>();
+	/*EnemyWaypointControllerComponent* controller = AddComponent<EnemyWaypointControllerComponent>();
 	std::vector<Vector2D> points = { Vector2D(300.0f,300.0f), Vector2D(300.0f,350.0f), Vector2D(200.0f,400.0f), Vector2D(400.0f,300.0f), Vector2D(300.0f,300.0f), Vector2D(300.0f,400.0f), Vector2D(400.0f,400.0f), Vector2D(400.0f,300.0f) };
-	controller->Create(200.0f, points);
+	controller->Create(200.0f, points);*/
+
+	EnemyTargetControllerComponent* controller = AddComponent<EnemyTargetControllerComponent>();
+	controller->Create(Vector2D(400.0f, 300.0f), 200);
 
 	SpriteComponent* spriteComponent = AddComponent<SpriteComponent>();
 	spriteComponent->Create("enemy01A.png", Vector2D(0.5f, 0.5f));
