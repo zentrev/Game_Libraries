@@ -43,11 +43,12 @@ void EnemyWaypointControllerComponent::Update()
 
 	float dt = Timer::Instance()->DeltaTime();
 
-	Vector2D force = m_waypoint->GetTransform().position - m_owner->GetTransform().position;
-	force.Normalize();
+	Vector2D direction = m_waypoint->GetTransform().position - m_owner->GetTransform().position;
+	float rotation = (Vector2D::GetAngle(direction) * Math::RadiansToDegrees + 90);
 
-	float rotation = Vector2D::GetAngle(force) * Math::RadiansToDegrees +90;
-	m_owner->GetTransform().rotation = Math::Lerp(m_owner->GetTransform().rotation, rotation, (2 * dt));
+	m_owner->GetTransform().rotation = Math::LerpDegrees(m_owner->GetTransform().rotation, rotation, 4.0f * dt);
+
+	Vector2D force = Vector2D::Rotate(Vector2D::up, m_owner->GetTransform().rotation * Math::DegreesToRadians + Math::PI);
 
 	KinematicComponent* kinematic = m_owner->GetComponent<KinematicComponent>();
 	if (kinematic)
@@ -76,6 +77,8 @@ void EnemyWaypointControllerComponent::SetNewxtWaypoint()
 	} 
 	else
 	{
-		m_owner->SetState(Entity::DESTROY);
+		m_waypointIndex = 0;
+		m_waypoint = m_waypoints[m_waypointIndex];
+		m_isComplete = true;
 	}
 }

@@ -15,8 +15,11 @@ public:
 	void Update();
 
 	void SetNewxtWaypoint();
+	
+	bool IsComplete() { return m_isComplete; }
 
 protected:
+	bool m_isComplete = false;
 	float m_speed = 0.0f;
 
 	float m_timer = 0.0f;
