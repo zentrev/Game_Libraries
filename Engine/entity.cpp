@@ -48,8 +48,10 @@ void Entity::RemoveComponent(Component* component)
 	assert(std::find(m_components.begin(), m_components.end(), component) != m_components.end());
 
 	auto iter = std::find(m_components.begin(), m_components.end(), component);
-	delete *iter;
+	//delete *iter;
+	(*iter)->Destroy();
 	m_components.erase(iter);
+	
 }
 
 bool Entity::Intersects(Entity * otherEntity)

@@ -1,3 +1,5 @@
-﻿  stateMachine.cpp
+﻿  enemyWaypointControllerComponent.cpp
+c:\users\craines\documents\c++\gamel\ncgame\engine\enemywaypointcontrollercomponent.cpp(76): warning C4506: no definition for inline function 'Vector2D Vector2D::Rotate(const Vector2D &,float)'
+c:\users\craines\documents\c++\gamel\ncgame\engine\enemywaypointcontrollercomponent.cpp(76): warning C4506: no definition for inline function 'float Vector2D::GetAngle(const Vector2D &)'
      Creating library C:\Users\CRaines\Documents\C++\GameL\NCGame\x64\Debug\Engine.lib and object C:\Users\CRaines\Documents\C++\GameL\NCGame\x64\Debug\Engine.exp
   Engine.vcxproj -> C:\Users\CRaines\Documents\C++\GameL\NCGame\x64\Debug\Engine.dll

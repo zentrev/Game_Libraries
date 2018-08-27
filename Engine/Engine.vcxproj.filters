@@ -161,6 +161,9 @@
     <ClInclude Include="debugDraw.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="enemyWaypointControllerComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -270,6 +273,9 @@
     </ClCompile>
     <ClCompile Include="debugDraw.cpp">
       <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyWaypointControllerComponent.cpp">
+      <Filter>Components</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

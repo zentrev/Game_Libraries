@@ -7,18 +7,41 @@
 class Enemy : public Entity
 {
 public:
-	Enemy(Scene* scene) : Entity(scene) {}
+	enum eType
+	{
+		BEE,
+		BOSS,
+	};
+
+	enum eSide
+	{
+		LEFT,
+		RIGHT
+	};
+
+	struct Info
+	{
+		eType type;
+		eSide side;
+		float speed;
+		Vector2D target;
+
+	};
+
+public:
+	Enemy(Scene* scene, const ID& id) : Entity(scene, id) {}
 	~Enemy() {}
 
-	void Create(const Vector2D& position, const Vector2D & targetPosition);
+	void Create(const Info& info);
 	void Update();
 
 	void OnEvent(const Event& event);
 
 	static std::vector<Vector2D> m_enterPath;
-	Vector2D m_targetPosition;
+	static std::vector<std::vector<Vector2D>> m_paths;
 
-	float m_speed = 300.0f;
+	Info m_info;
+
 protected:
 	StateMachine * m_stateMachine;
 };

@@ -1,4 +1,6 @@
 #include "timer.h"
+#include <math.h>
+#include <algorithm>
 
 bool Timer::Initialize(Engine * engine)
 {
@@ -29,4 +31,5 @@ void Timer::Update()
 	}
 	
 	m_dt = (m_paused) ? 0.0f : milliseconds / 1000.0f;
+	m_dt = std::min<float>(m_dt, 1.0f);
 }

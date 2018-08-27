@@ -1,2 +1,4 @@
 ﻿  enemy.cpp
+c:\users\craines\documents\c++\gamel\ncgame\game\enemy.cpp(185): warning C4244: 'argument': conversion from 'unsigned __int64' to 'float', possible loss of data
+c:\users\craines\documents\c++\gamel\ncgame\game\enemy.cpp(185): warning C4244: 'initializing': conversion from 'float' to 'size_t', possible loss of data
   Game.vcxproj -> C:\Users\CRaines\Documents\C++\GameL\NCGame\x64\Debug\Game.exe

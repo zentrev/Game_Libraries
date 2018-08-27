@@ -7,10 +7,11 @@
 #include "audioSystem.h"
 #include "eventManager.h"
 #include "explosion.h"
-#include "enemyWaypointControllerComponent.h"
 #include "enemyTargetControllerComponent.h"
 #include "transformControllerComponent.h"
 #include "timer.h"
+#include "animationComponent.h"
+#include "enemyWaypointControllerComponent.h"
 
 std::vector<Vector2D> Enemy::m_enterPath = {
 	Vector2D(200.0f, 400.0f),
@@ -19,17 +20,53 @@ std::vector<Vector2D> Enemy::m_enterPath = {
 	Vector2D(100.0f, 300.0f),
 	Vector2D(200.0f, 400.0f)
 };
+std::vector<std::vector<Vector2D>> Enemy::m_paths = {
+	std::vector<Vector2D> {
+		Vector2D(300.0f, 200.0f),
+		Vector2D(300.0f, 300.0f),
+		Vector2D(200.0f, 400.0f),
+		Vector2D(600.0f, 400.0f),
+		Vector2D(400.0f, 700.0f),
+	},
+	std::vector<Vector2D> {
+		Vector2D(300.0f, 100.0f),
+		Vector2D(500.0f, 300.0f),
+		Vector2D(300.0f, 500.0f),
+		Vector2D(500.0f, 700.0f)
+	},
+	std::vector<Vector2D> {
+		Vector2D(200.0f, 100.0f),
+		Vector2D(200.0f, 200.0f),
+		Vector2D(200.0f, 300.0f),
+		Vector2D(200.0f, 400.0f),
+		Vector2D(600.0f, 100.0f),
+		Vector2D(600.0f, 200.0f),
+		Vector2D(600.0f, 300.0f),
+		Vector2D(600.0f, 400.0f),
+		Vector2D(400.0f, 600.0f),
+		Vector2D(400.0f, 700.0f),
+	}
+};
 
-void Enemy::Create(const Vector2D & position, const Vector2D & targetPosition)
+
+void Enemy::Create(const Info& info)
 {
+	m_info = info;
 	SetTag("enemy");
-	m_transform.position = position;
+	m_transform.position = (m_info.side == LEFT) ? Vector2D(-64.0f, 400.0f) : Vector2D(864.0f, 400.0f);
 	m_transform.scale = Vector2D(2.0f, 2.0f);
-
-	m_targetPosition = targetPosition;
 
 	KinematicComponent* kinematic = AddComponent<KinematicComponent>();
 	kinematic->Create(50000.0f, 0.3f);
+
+	AnimationComponent* animationComponent = AddComponent<AnimationComponent>();
+
+	std::vector<std::string> animations;
+	if (m_info.type == BEE) animations = { "enemy02A.png", "enemy02B.png" };
+	if (m_info.type == BOSS) animations = { "enemy01A.png", "enemy01B.png" };
+
+	animationComponent->Create(animations, 1.0f / 4.0f);
+
 
 	SpriteComponent* spriteComponent = AddComponent<SpriteComponent>();
 	spriteComponent->Create("enemy01A.png", Vector2D(0.5f, 0.5f));
@@ -82,7 +119,7 @@ void Enemy::OnEvent(const Event & event)
 void EnterPathState::Enter()
 {
 	EnemyWaypointControllerComponent* waypointController = m_owner->GetEntity()->AddComponent<EnemyWaypointControllerComponent>();
-	waypointController->Create(m_owner->GetEntity<Enemy>()->m_speed, Enemy::m_enterPath);
+	waypointController->Create(Enemy::m_enterPath, m_owner->GetEntity<Enemy>()->m_info.speed);
 }
 void EnterPathState::Update()
 {
@@ -101,7 +138,7 @@ void EnterPathState::Exit()
 void EnterFormationState::Enter()
 {
 	EnemyWaypointControllerComponent* waypointController = m_owner->GetEntity()->AddComponent<EnemyWaypointControllerComponent>();
-	waypointController->Create(m_owner->GetEntity<Enemy>()->m_speed, std::vector<Vector2D> { m_owner->GetEntity<Enemy>()->m_targetPosition });
+	waypointController->Create(std::vector<Vector2D> { m_owner->GetEntity<Enemy>()->m_info.target }, m_owner->GetEntity<Enemy>()->m_info.speed);
 }
 
 void EnterFormationState::Update()
@@ -122,7 +159,7 @@ void EnterFormationState::Exit()
 void IdleState::Enter()
 {
 	TransformControllerComponent* controller = m_owner->GetEntity()->AddComponent<TransformControllerComponent>();
-	controller->Create(m_owner->GetEntity<Enemy>()->m_targetPosition, 180.0f, m_owner->GetEntity<Enemy>()->m_speed, 5.0f);
+	controller->Create(m_owner->GetEntity<Enemy>()->m_info.target, 180.0f, m_owner->GetEntity<Enemy>()->m_info.speed, 5.0f);
 
 	m_timer = Math::GetRandomRange(m_timeMin, m_timeMax);
 }
@@ -145,8 +182,9 @@ void IdleState::Exit()
 
 void AttackState::Enter()
 {
+	size_t attackPath = Math::GetRandomRange(0, Enemy::m_paths.size());
 	EnemyWaypointControllerComponent* waypointController = m_owner->GetEntity()->AddComponent<EnemyWaypointControllerComponent>();
-	waypointController->Create(m_owner->GetEntity<Enemy>()->m_speed, Enemy::m_enterPath);
+	waypointController->Create(Enemy::m_paths.at(attackPath), m_owner->GetEntity<Enemy>()->m_info.speed);
 }
 void AttackState::Update()
 {

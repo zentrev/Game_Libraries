@@ -145,6 +145,7 @@
     <ClInclude Include="component.h" />
     <ClInclude Include="controllerComponent.h" />
     <ClInclude Include="debugDraw.h" />
+    <ClInclude Include="enemyWaypointControllerComponent.h" />
     <ClInclude Include="engine.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="event.h" />
@@ -189,6 +190,7 @@
     <ClCompile Include="component.cpp" />
     <ClCompile Include="controllerComponent.cpp" />
     <ClCompile Include="debugDraw.cpp" />
+    <ClCompile Include="enemyWaypointControllerComponent.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="eventManager.cpp" />

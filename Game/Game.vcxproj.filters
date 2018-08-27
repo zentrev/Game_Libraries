@@ -40,9 +40,6 @@
     <ClCompile Include="states.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="enemyWaypointControllerComponent.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
     <ClCompile Include="enemyTargetControllerComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
@@ -74,9 +71,6 @@
     </ClInclude>
     <ClInclude Include="states.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="enemyWaypointControllerComponent.h">
-      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="enemyTargetControllerComponent.h">
       <Filter>Components</Filter>
